@@ -1,5 +1,13 @@
-import { Accordion } from "flowbite-react";
 import React from "react";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from "react-accessible-accordion";
+
+import "react-accessible-accordion/dist/fancy-example.css";
 
 function Questions() {
   return (
@@ -14,71 +22,67 @@ function Questions() {
       </div>
       <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 pt-6 gap-8 lg:px-36 px-10 sm:px-10">
         <Accordion>
-          <Accordion.Panel>
-            <Accordion.Title>
+          <AccordionItem>
+            <AccordionItemHeading>
+              <AccordionItemButton>
               Are you looking for automobile service in Delhi ncr?
-            </Accordion.Title>
-            <Accordion.Content>
-              <p className="mb-2 text-gray-500 ">
-                ExpertMechanic provides affordable car support, so don’t
-                hesitate to contact us!
+              </AccordionItemButton>
+            </AccordionItemHeading>
+            <AccordionItemPanel>
+              <p>
+              ExpertMechanic provides affordable car support, so don’t hesitate to contact us!
               </p>
-            </Accordion.Content>
-          </Accordion.Panel>
-          <Accordion.Panel>
-            <Accordion.Title>
+            </AccordionItemPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionItemHeading>
+              <AccordionItemButton>
               What type of engine oil/lubricant do you recommend for my car?
-            </Accordion.Title>
-            <Accordion.Content>
-              <p className="mb-2 text-gray-500 ">
-                We only use MOBIL products in our auto services. We’re committed
-                to providing you and your car the best it deserves, without any
-                compromises.
+              </AccordionItemButton>
+            </AccordionItemHeading>
+            <AccordionItemPanel>
+              <p>
+              We only use MOBIL products in our auto services. We’re committed to providing you and your car the best it deserves, without any compromises.
               </p>
-            </Accordion.Content>
-          </Accordion.Panel>
-          <Accordion.Panel>
-            <Accordion.Title>
-              I need to get my car serviced. What kind of spare parts do you
-              use?
-            </Accordion.Title>
-            <Accordion.Content>
-              <p className="mb-2 text-gray-500 ">
-                We use only genuine OEM/OES spares, meaning the parts we replace
-                or repair will fit your car precisely and function properly. We
-                manage a central spare parts inventory and can source recommened
-                spares for you; nothing but the best!
+            </AccordionItemPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionItemHeading>
+              <AccordionItemButton>
+              I need to get my car serviced. What kind of spare parts do you use?
+              </AccordionItemButton>
+            </AccordionItemHeading>
+            <AccordionItemPanel>
+              <p>
+              We use only genuine OEM/OES spares, meaning the parts we replace or repair will fit your car precisely and function properly. We manage a central spare parts inventory and can source recommened spares for you; nothing but the best!
               </p>
-            </Accordion.Content>
-          </Accordion.Panel>
-          <Accordion.Panel>
-            <Accordion.Title>
+            </AccordionItemPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionItemHeading>
+              <AccordionItemButton>
               ExpertsMechanic has no hidden fees. Once you provide the go-ahead,
-            </Accordion.Title>
-            <Accordion.Content>
-              <p className="mb-2 text-gray-500 ">
-                Our prices and rates are some of the most affordable around. We
-                offer a flat fee for all services, so you can expect an
-                affordable cost with no hidden charges.
+              </AccordionItemButton>
+            </AccordionItemHeading>
+            <AccordionItemPanel>
+              <p>
+              Our prices and rates are some of the most affordable around. We offer a flat fee for all services, so you can expect an affordable cost with no hidden charges.
               </p>
-            </Accordion.Content>
-          </Accordion.Panel>
-          <Accordion.Panel>
-            <Accordion.Title>
+            </AccordionItemPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionItemHeading>
+              <AccordionItemButton>
               Can ExpertsMechanic pickup and deliver a car to Delhi?
-            </Accordion.Title>
-            <Accordion.Content>
-              <p className="mb-2 text-gray-500 ">
-                Our delivery service is absolutely free of charge. Whenever you
-                want a delivery, you have to book a ride with us and we will
-                take it from there.
+              </AccordionItemButton>
+            </AccordionItemHeading>
+            <AccordionItemPanel>
+              <p>
+              Our delivery service is absolutely free of charge. Whenever you want a delivery, you have to book a ride with us and we will take it from there.
               </p>
-            </Accordion.Content>
-          </Accordion.Panel>
+            </AccordionItemPanel>
+          </AccordionItem>
         </Accordion>
-
-
-        
       </div>
     </>
   );

@@ -1,6 +1,5 @@
 import Layout from "@/components/Layout";
 import servicedata from "@/utils/servicedata";
-import { Accordion } from "flowbite-react";
 import Image from "next/image";
 import React from "react";
 
@@ -43,40 +42,7 @@ function acservice() {
               {/* Remove class [ h-24 ] when adding a card block */}
               {/* Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border */}
               <div className="">
-                <Accordion alwaysOpen={true}>
-                  <Accordion.Panel>
-                    <Accordion.Title>What’s Included?</Accordion.Title>
-                    <Accordion.Content>
-                      <p className="mb-2 text-gray-500 dark:text-white font-semibold">
-                        Inspection
-                      </p>
-                      <p className="text-gray-500 dark:text-white">
-                        {periodic.inspection}
-                      </p>
-                      <p className="mb-2 text-gray-500 dark:text-white font-semibold">
-                        Replacement
-                      </p>
-                      <p className="text-gray-500 dark:text-white">
-                        {periodic.replacement}
-                      </p>
-
-                      <p className="mb-2 text-gray-500 dark:text-white font-semibold">
-                        Top-up
-                      </p>
-                      <p className="text-gray-500 dark:text-white">
-                        {periodic.topup}
-                      </p>
-                    </Accordion.Content>
-                  </Accordion.Panel>
-                  <Accordion.Panel>
-                    <Accordion.Title>Other</Accordion.Title>
-                    <Accordion.Content>
-                      <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        {periodic.other}
-                      </p>
-                    </Accordion.Content>
-                  </Accordion.Panel>
-                </Accordion>
+                
               </div>
               {/* Remove class [ h-24 ] when adding a card block */}
               {/* Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border */}
