@@ -9,6 +9,7 @@ const servicedata = {
       description4: "Panel Rubbing Polishing",
       description5: "4 Layers of Painting",
       image: "/servicesimage/denting_penting/1.png",
+      countInStock: 20,
     },
     {
       name: "Bonnet Paint",
@@ -19,6 +20,7 @@ const servicedata = {
       description4: "Panel Rubbing Polishing",
       description5: "4 Layers of Painting",
       image: "/servicesimage/denting_penting/2.png",
+      countInStock: 20,
     },
     {
       name: "Rear Bumper Paint",
@@ -29,6 +31,7 @@ const servicedata = {
       description4: "Panel Rubbing Polishing",
       description5: "4 Layers of Painting",
       image: "/servicesimage/denting_penting/3.png",
+      countInStock: 20,
     },
     {
       name: "Right Fender Pent",
@@ -39,6 +42,7 @@ const servicedata = {
       description4: "Panel Rubbing Polishing",
       description5: "4 Layers of Painting",
       image: "/servicesimage/denting_penting/4.png",
+      countInStock: 20,
     },
     {
       name: "Left Fender Pent",
@@ -49,6 +53,7 @@ const servicedata = {
       description4: "Panel Rubbing Polishing",
       description5: "4 Layers of Painting",
       image: "/servicesimage/denting_penting/5.png",
+      countInStock: 20,
     },
     {
       name: "Front Door (L)",
@@ -59,6 +64,7 @@ const servicedata = {
       description4: "Panel Rubbing Polishing",
       description5: "4 Layers of Painting",
       image: "/servicesimage/denting_penting/6.png",
+      countInStock: 20,
     },
     {
       name: "Front Door (R)",
@@ -89,6 +95,7 @@ const servicedata = {
       description4: "Panel Rubbing Polishing",
       description5: "4 Layers of Painting",
       image: "/servicesimage/denting_penting/1.png",
+      countInStock: 20,
     },
     {
       name: "Quarter Panel (L)",
@@ -99,6 +106,7 @@ const servicedata = {
       description4: "Panel Rubbing Polishing",
       description5: "4 Layers of Painting",
       image: "/servicesimage/denting_penting/1.png",
+      countInStock: 20,
     },
     {
       name: "Quarter Panel (R)",
@@ -109,6 +117,7 @@ const servicedata = {
       description4: "Panel Rubbing Polishing",
       description5: "4 Layers of Painting",
       image: "/servicesimage/denting_penting/1.png",
+      countInStock: 20,
     },
     {
       name: "Running Board (R)",
@@ -119,6 +128,7 @@ const servicedata = {
       description4: "Panel Rubbing Polishing",
       description5: "4 Layers of Painting",
       image: "/servicesimage/denting_penting/1.png",
+      countInStock: 20,
     },
     {
       name: "Roof",
@@ -129,6 +139,7 @@ const servicedata = {
       description4: "Panel Rubbing Polishing",
       description5: "4 Layers of Painting",
       image: "/servicesimage/denting_penting/1.png",
+      countInStock: 20,
     },
   ],
 
@@ -142,6 +153,7 @@ const servicedata = {
       description4: "Opening & Fitting of Bumper/Headlight",
       description5: "Projector/LEDs/DRLs Additional (If Applicable)",
       image: "/servicesimage/headlight/front-light.jpg",
+      countInStock: 20,
     },
     {
       name: "Rear Taillight",
@@ -152,6 +164,7 @@ const servicedata = {
       description4: "Opening & Fitting of Bumper/Headlight",
       description5: "Projector/LEDs/DRLs Additional (If Applicable)",
       image: "/servicesimage/headlight/rear-light.jpg",
+      countInStock: 20,
     },
     {
       name: "Fog Light",
@@ -162,6 +175,7 @@ const servicedata = {
       description4: "Opening & Fitting of Bumper/Headlight",
       description5: "Projector/LEDs/DRLs Additional (If Applicable)",
       image: "/servicesimage/headlight/fog-light.jpg",
+      countInStock: 20,
     },
   ],
 
@@ -175,9 +189,10 @@ const servicedata = {
         "-Heater/Spark Plugs, -Engine Oil, Oil Filter, Wiper Fluid Coolant (200 ml), Battery Water (500 ml",
       other: "Health Reporting -Dashboard Polishing -Tyre Polishing",
       image: "/servicesimage/periodic/basic.jpg",
+      countInStock: 20,
     },
     {
-      name: "Basic Service",
+      name: "Advance Service",
       hour: "Take 3 Hours",
       warranty: "2 Months Warranty",
       month: "Every 5,000 Kms / 3 Months",
@@ -185,9 +200,10 @@ const servicedata = {
       "-Heater/Spark Plugs, -Engine Oil, Oil Filter, Wiper Fluid Coolant (200 ml), Battery Water (500 ml",
       other: "Health Reporting -Dashboard Polishing -Tyre Polishing",
       image: "/servicesimage/periodic/advanced.jpg",
+      countInStock: 20,
     },
     {
-      name: "Basic Service",
+      name: "Premium Service",
       hour: "Take 3 Hours",
       warranty: "2 Months Warranty",
       month: "Every 5,000 Kms / 3 Months",
@@ -195,6 +211,7 @@ const servicedata = {
         "-Heater/Spark Plugs, -Engine Oil, Oil Filter, Wiper Fluid Coolant (200 ml), Battery Water (500 ml",
       other: "Health Reporting -Dashboard Polishing -Tyre Polishing",
       image: "/servicesimage/periodic/primeium.jpg",
+      countInStock: 20,
     },
   ],
 
@@ -208,6 +225,7 @@ const servicedata = {
       description4: "Opening & Fitting of Bumper/Headlight",
       description5: "Projector/LEDs/DRLs Additional (If Applicable)",
       image: "/servicesimage/brake/front.jpg",
+      countInStock: 20,
     },
     {
       name: "Front Brake Pads",
@@ -218,6 +236,7 @@ const servicedata = {
       description4: "Opening & Fitting of Bumper/Headlight",
       description5: "Projector/LEDs/DRLs Additional (If Applicable)",
       image: "/servicesimage/brake/front.jpg",
+      countInStock: 20,
     },
     {
       name: "Front Brake Pads",
@@ -228,6 +247,7 @@ const servicedata = {
       description4: "Opening & Fitting of Bumper/Headlight",
       description5: "Projector/LEDs/DRLs Additional (If Applicable)",
       image: "/servicesimage/brake/front.jpg",
+      countInStock: 20,
     },
     {
       name: "Front Brake Pads",
@@ -238,6 +258,7 @@ const servicedata = {
       description4: "Opening & Fitting of Bumper/Headlight",
       description5: "Projector/LEDs/DRLs Additional (If Applicable)",
       image: "/servicesimage/brake/front.jpg",
+      countInStock: 20,
     },
     {
       name: "Front Brake Pads",
@@ -248,6 +269,7 @@ const servicedata = {
       description4: "Opening & Fitting of Bumper/Headlight",
       description5: "Projector/LEDs/DRLs Additional (If Applicable)",
       image: "/servicesimage/brake/front.jpg",
+      countInStock: 20,
     },
     {
       name: "Front Brake Pads",
@@ -258,6 +280,7 @@ const servicedata = {
       description4: "Opening & Fitting of Bumper/Headlight",
       description5: "Projector/LEDs/DRLs Additional (If Applicable)",
       image: "/servicesimage/brake/front.jpg",
+      countInStock: 20,
     },
     {
       name: "Front Brake Pads",
@@ -268,6 +291,7 @@ const servicedata = {
       description4: "Opening & Fitting of Bumper/Headlight",
       description5: "Projector/LEDs/DRLs Additional (If Applicable)",
       image: "/servicesimage/brake/front.jpg",
+      countInStock: 20,
     },
     {
       name: "Front Brake Pads",
@@ -278,6 +302,7 @@ const servicedata = {
       description4: "Opening & Fitting of Bumper/Headlight",
       description5: "Projector/LEDs/DRLs Additional (If Applicable)",
       image: "/servicesimage/brake/front.jpg",
+      countInStock: 20,
     },
   ],
 
@@ -291,6 +316,7 @@ const servicedata = {
       description4: "Opening & Fitting of Bumper/Headlight",
       description5: "Projector/LEDs/DRLs Additional (If Applicable)",
       image: "/servicesimage/brake/front.jpg",
+      countInStock: 20,
     },
   ],
 };
