@@ -3,30 +3,23 @@ import { Store } from "@/utils/Store";
 import servicedata from "@/utils/servicedata";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+import SelectionModal from "@/components/SelectionModal";
+import SelectedCar from "@/components/SelectedCar";
+import PriceAndButtons from "@/components/PriceAndButtons";
 
 function headlight() {
-  const { state, dispatch } = useContext(Store);
+  const { state, dispatch, setModalOpen, modalOpen, selectedVehicle } =
+    useContext(Store);
   const { query } = useRouter();
   const { slug } = query;
   const periodicservices = servicedata.periodics.find((x) => x.slug === slug);
-  
 
-  const addToCartHandler = () => {
-    const existItem = state.cart.cartItems.find((x) => x.slug === periodicservices.slug);
-    const quantity = existItem ? existItem.quantity + 1 : 1;
-
-    if (periodicservices.countInStock < quantity) {
-      alert('Sorry. Product is out of stock');
-      return;
-    }
-
-    dispatch({ type: 'CART_ADD_ITEM', payload: { ...periodicservices, quantity } });
-  };
   return (
     <>
       <Layout title="">
         <div className="overflow-y-hidden mt-24">
+          <SelectedCar/>
           <div className="xl:mx-auto xl:container  xl:px-20 md:px-6 px-4 py-12">
             <div className="lg:flex items-center justify-center lg:space-x-12 2xl:space-x-6">
               <div className>
@@ -77,19 +70,38 @@ function headlight() {
                       </div>
                     </div>
                     <div className="flex items-center">
-                      <div className="flex items-start flex-col  ">
-                        <button onClick={addToCartHandler} className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
-                          <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:text-gray-900 rounded-md group-hover:bg-opacity-0">
-                            Add to Cart
-                          </span>
-                        </button>
-                      </div>
+                    <PriceAndButtons />
                     </div>
                   </div>
                 ))}
               </div>
             </div>
           </div>
+          {/* {modalOpen && (
+            <SelectionModal
+              isOpen={modalOpen}
+              handleClose={() => setModalOpen(!modalOpen)}
+            >
+              <div className="flex flex-col justify-between h-full w-full ">
+                <div className="flex flex-col mt-auto mb-auto items-center p-8">
+                  <span>
+                    Lorem, ipsum metnipisicing elit. Laudantium, voluptas.
+                  </span>
+                  <span>Lorem ipsum dolor sit amet.</span>
+                </div>
+                <div>
+                  <button
+                    className="py-2 px-8 font-bold hover:purple border rounded"
+                    type="button"
+                    onClick={() => setModalOpen(!modalOpen)}
+                  >
+                    {" "}
+                    back
+                  </button>
+                </div>
+              </div>
+            </SelectionModal>
+          )} */}
         </div>
       </Layout>
     </>

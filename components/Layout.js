@@ -4,11 +4,45 @@ import Link from "next/link";
 import Image from "next/image";
 import { useContext } from "react";
 import { Store } from "@/utils/Store";
+import SelectionModal from "@/components/SelectionModal";
+import { cars } from "@/utils/cars";
+import CarCard from "./CarCard";
+import { useRouter } from "next/router";
+import { useRef } from "react";
+
+//we will remove this variable and selectedVehicleImage state later when data for cars is complete
+let imageToShow = "0";
 
 function Layout({ title, children }) {
+  const router = useRouter();
+  const modalSearchRef = useRef();
   const [show, setShow] = useState(null);
-  const { state } = useContext(Store);
+  const {
+    state,
+    setModalOpen,
+    modalOpen,
+    setSelectedVehicle,
+    selectedVehicle,
+    setSelectedVehicleImage,
+    searchInfo,
+    setSearchInfo,
+  } = useContext(Store);
+  // console.log(cars[0]["name"])
   const { cart } = state;
+  const search = (returnData, [keywords]) => {
+    const searchedValue = () => {
+      return returnData.filter((items) =>
+        [keywords].some((key) => {
+          return items[key].toLowerCase().includes(searchInfo);
+        })
+      );
+    };
+    if (searchedValue().length > 0) {
+      return searchedValue();
+    } else {
+      return [];
+    }
+  };
 
   return (
     <>
@@ -99,7 +133,7 @@ function Layout({ title, children }) {
                         <circle cx={12} cy={12} r={9} />
                       </svg>
                     </span>
-                    <Link href="/contact">Cantact</Link>
+                    <Link href="/contact">Contact</Link>
                   </li>
                   <li className="cursor-pointer h-full flex items-center text-sm hover:text-indigo-700 text-gray-800 tracking-normal transition duration-150 ease-in-out">
                     <span className="mr-2">
@@ -355,9 +389,9 @@ function Layout({ title, children }) {
             <div className="py-4 px-6 w-full flex xl:hidden justify-between items-center bg-white fixed top-0 z-40">
               <div className="w-24">
                 <Image
-                  src="./em_1.svg"
+                  src="/em-logo.svg"
                   alt="Picture of the author"
-                  width={50}
+                  width={150}
                   height={0}
                 />
               </div>
@@ -413,16 +447,16 @@ function Layout({ title, children }) {
             <div
               className={
                 show
-                  ? "absolute xl:hidden w-full h-full transform -translate-x-0 z-40"
-                  : "absolute xl:hidden w-full h-full transform -translate-x-full z-40"
+                  ? "fixed xl:hidden w-full h-full transform -translate-x-0 z-40 transition "
+                  : "fixed xl:hidden w-full h-full  transform -translate-x-full z-40 transition"
               }
               id="mobile-nav"
             >
               <div
-                className="bg-gray-800 opacity-50 w-full h-full"
+                className="bg-gray-800 opacity-50 w-full h-full "
                 onClick={() => setShow(!show)}
               />
-              <div className="w-64  fixed overflow-y-auto z-40 top-0 bg-white shadow h-full flex-col justify-between xl:hidden pb-4 transition duration-150 ease-in-out">
+              <div className="w-64  fixed overflow-y-auto z-40 top-0 bg-white shadow h-full flex-col justify-between xl:hidden pb-4 transition -ease-in-out delay-150">
                 <div className="px-6 h-full">
                   <div className="flex flex-col justify-between h-full w-full">
                     <div>
@@ -430,9 +464,9 @@ function Layout({ title, children }) {
                         <div className="flex items-center justify-between w-full">
                           <div className="flex items-center">
                             <Image
-                              src="./em_1.svg"
+                              src="/em-logo.svg"
                               alt="Picture of the author"
-                              width={50}
+                              width={150}
                               height={0}
                             />
                           </div>
@@ -623,7 +657,126 @@ function Layout({ title, children }) {
         </div>
       </header>
 
-      <main className="">{children}</main>
+      <main className="">
+        {children}{" "}
+        {modalOpen && (
+          <SelectionModal
+            isOpen={modalOpen}
+            handleClose={() => {
+              setSearchInfo("");
+              setModalOpen(!modalOpen);
+            }}
+          >
+            <div className="flex flex-col justify-between overflow-y-scroll overflow-x-hidden w-full lg:px-20 px-10 mb-5">
+              {/* Search */}
+              <div className="flex items-center  sm:fixed lg:relative">
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    setSearchInfo(modalSearchRef.current.value);
+                  }}
+                  className="flex items-center w-full"
+                >
+                  <label for="simclassNameple-search" className="sr-only">
+                    Search
+                  </label>
+                  <div className="relative w-full">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none ">
+                      <svg
+                        aria-hidden="true"
+                        className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                    <input
+                      type="text"
+                      id="simple-search"
+                      className="bg-gray-50 border border-gray-300 w-full text-gray-900 text-sm rounded-l-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500  focus:border-blue-500 outline-blue-500"
+                      placeholder="Search"
+                      ref={modalSearchRef}
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="p-2.5  text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      ></path>
+                    </svg>
+                    <span className="sr-only">Search</span>
+                  </button>
+                </form>
+              </div>
+              {/* fetch cars and display */}
+
+              {search(cars, ["name"]).length > 0 ? (
+                <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 h-full py-5 ">
+                  {!router.query.carModel || router.query.carModel === ""
+                    ? search(cars, ["name"]).map((items) => {
+                        return (
+                          <CarCard
+                            key={items.id}
+                            id={items.id}
+                            name={items.name}
+                            image={items.image}
+                            showAsSelected={false}
+                          />
+                        );
+                      })
+                    : search(
+                        cars.find((items) => {
+                          imageToShow = items.id;
+                          return items.id == router.query.carModel;
+                        }).models,
+                        ["model"]
+                      ).map((items, index) => {
+                        const allModelsinSelectedBrand = items;
+
+                        return (
+                          <CarCard
+                            key={index}
+                            id={index}
+                            name={items.model}
+                            image={cars[router.query.carModel].car_images}
+                            showAsSelected={false}
+                            onClick={() => {
+                              setSelectedVehicle([allModelsinSelectedBrand]);
+                              setModalOpen(!modalOpen);
+                              setSelectedVehicleImage(imageToShow);
+                            }}
+                          />
+                        );
+                      })}{" "}
+                </div>
+              ) : (
+                <span className="pt-10 m-0 font-bold text-xl text-center">
+                  <span className="text-3xl text-blue-700">Oops! </span> <br />{" "}
+                  The vehicle you searched for is not available
+                </span>
+              )}
+            </div>
+          </SelectionModal>
+        )}
+      </main>
       <footer>
         <div className>
           <div className="relative flex justify-start md:justify-center md:items-end ">

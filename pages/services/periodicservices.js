@@ -13,31 +13,17 @@ import { Store } from "@/utils/Store";
 
 import "react-accessible-accordion/dist/fancy-example.css";
 import { useRouter } from "next/router";
+import SelectedCar from "@/components/SelectedCar";
+import PriceAndButtons from "@/components/PriceAndButtons";
 
 function periodicservices() {
   const { state, dispatch } = useContext(Store);
-  const { query } = useRouter();
-  const { slug } = query;
-  const periodicservices = servicedata.periodics.find((x) => x.slug === slug);
-  
-
-  const addToCartHandler = () => {
-    const existItem = state.cart.cartItems.find((x) => x.slug === periodicservices.slug);
-    const quantity = existItem ? existItem.quantity + 1 : 1;
-
-    if (periodicservices.countInStock < quantity) {
-      alert('Sorry. Product is out of stock');
-      return;
-    }
-
-    dispatch({ type: 'CART_ADD_ITEM', payload: { ...periodicservices, quantity } });
-  };
 
 
   return (
     <>
       <Layout title="Periodic Services">
-        <div className="container mx-auto lg:px-60 px-10 sm:px-10 mt-24">
+        <div className="container mx-auto lg:px-60 px-10 sm:px-10 mt-24"><SelectedCar />
           <div className="">
             <div className>
               <p className="lg:text-4xl text-3xl font-extrabold leading-9 text-gray-800">
@@ -114,14 +100,7 @@ function periodicservices() {
                 {/* Remove class [ h-24 ] when adding a card block */}
                 {/* Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border */}
                 <div className=" pt-5 sm:pt-5 lg:pt-0 lg:justify-self-end ...">
-                  <button
-                    onClick={addToCartHandler}
-                    className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
-                  >
-                    <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:text-gray-900 rounded-md group-hover:bg-opacity-0">
-                      Add to cart
-                    </span>
-                  </button>
+                <PriceAndButtons/>
                 </div>
               </div>
             ))}
@@ -182,14 +161,7 @@ function periodicservices() {
               </div>
               <div className="flex items-center">
                 <div className="flex items-start flex-col  ">
-                  <button
-                    onClick={addToCartHandler}
-                    className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
-                  >
-                    <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:text-gray-900 rounded-md group-hover:bg-opacity-0">
-                      Cyan to blue
-                    </span>
-                  </button>
+               <PriceAndButtons/>
                 </div>
               </div>
             </div>

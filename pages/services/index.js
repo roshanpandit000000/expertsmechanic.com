@@ -9,7 +9,7 @@ function index() {
       <Layout title="Services">
         {/* tital */}
 
-        <div className="pt-24 sm:pt-24 pb-10 sm:pb-10 lg:py-10 flex-col items-center justify-center  px-4">
+        <div className="mt-24 sm:pt-24 pb-10 sm:pb-10 lg:py-10 flex-col items-center justify-center  px-4">
           <h1
             role="heading"
             className="text-center xl:text-5xl md:text-4xl text-2xl font-bold text-gray-800"

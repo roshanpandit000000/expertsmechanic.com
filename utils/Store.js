@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useState } from "react";
 
 export const Store = createContext();
 
@@ -32,7 +32,23 @@ function reducer(state, action) {
 }
 
 export function StoreProvider({ children }) {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedVehicle, setSelectedVehicle] = useState([]);
+  const [selectedVehicleImage, setSelectedVehicleImage] = useState("");
+  const [searchInfo, setSearchInfo] = useState("");
   const [state, dispatch] = useReducer(reducer, initialState);
-  const value = { state, dispatch };
+  const value = {
+    state,
+    dispatch,
+    modalOpen,
+    setModalOpen,
+    selectedVehicle,
+    selectedVehicleImage,
+    setSelectedVehicle,
+    setSelectedVehicleImage,
+    searchInfo,
+    setSearchInfo,
+  };
+
   return <Store.Provider value={value}>{children}</Store.Provider>;
 }
