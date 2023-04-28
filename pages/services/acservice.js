@@ -8,13 +8,15 @@ import PriceAndButtons from "@/components/PriceAndButtons";
 import React, { useContext } from "react";
 
 function acservice() {
+  const { state, dispatch, setSelectedVehicle, selectedVehicle } =
+    useContext(Store);
   return (
     <>
       <Layout title="AC Service & Repair">
-        <div className="container mx-auto lg:px-60 px-10 sm:px-10 mt-24">  
-        <SelectedCar />
+        <div className="container mx-auto lg:px-20 px-10 sm:px-10 mt-24">
+          <SelectedCar />
           {servicedata.periodics.map((periodic) => (
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-6 ">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 pt-6 ">
               {/* Remove class [ h-24 ] when adding a card block */}
               {/* Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border */}
               <div className="">
@@ -27,34 +29,58 @@ function acservice() {
               </div>
               {/* Remove class [ h-24 ] when adding a card block */}
               {/* Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border */}
-              <div className="">
+              <div>
                 <div>
-                  <p className="text-lg "> {periodic.name} </p>
-                </div>
-                <div>
-                  <p className="text-sm py-3 font-semibold">
-                    {" "}
-                    {periodic.hour}{" "}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold"> {periodic.warranty} </p>
-                </div>
-                <div>
-                  <p className="text-sm py-3 font-semibold">{periodic.month}</p>
-                </div>
+                  {selectedVehicle.length > 0 ? (
+                    <p className="text-xl font-bold leading-7 text-gray-800 text-left capitalize">
+                      {periodic.name + " " + "for"}
+                      <br />
+                      <span className="font-bold text-blue-900 capitalize">
+                        {selectedVehicle[0]?.model}
+                      </span>
+                    </p>
+                  ) : (
+                    <p className="text-xl font-bold leading-7 text-gray-800 text-left capitalize  ">
+                      {periodic.name}{" "}
+                    </p>
+                  )}
+
+                  <div>
+                    <p className="lg:w-40 2xl:w-52 text-base leading-6 mt-2 text-gray-600">
+                      {" "}
+                      {periodic.hour}{" "}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="lg:w-40 2xl:w-52 text-base leading-6 mt-2 text-gray-600">
+                      {" "}
+                      {periodic.warranty}{" "}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="lg:w-40 2xl:w-52 text-base leading-6 mt-2 text-gray-600">
+                      {periodic.month}
+                    </p>
+                  </div>
+                </div>{" "}
               </div>
               {/* Remove class [ h-24 ] when adding a card block */}
               {/* Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border */}
               <div className=""></div>
               {/* Remove class [ h-24 ] when adding a card block */}
               {/* Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border */}
-              <PriceAndButtons />
+              <div className="flex justify-center items-center">
+                <PriceAndButtons
+                  service_price_object={periodic.car_price}
+                  service_price={periodic.service_price}
+                  weeksToArrive={periodic.weeks_to_arrive}
+                />
+              </div>
             </div>
           ))}
         </div>
         {/* brake */}
-        <div className="container mx-auto lg:px-60 px-10 sm:px-10 ">
+        <div className="container mx-auto lg:container px-10 sm:px-10 ">
           {servicedata.Brakes.map((brake) => (
             <div className="mb-6 md:mt-10 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-14 lg:mb-6 2xl:mb-12 shadow">
               <div className="flex items-center">
@@ -99,7 +125,11 @@ function acservice() {
                 </div>
               </div>
               <div className="flex items-center">
-              <PriceAndButtons />
+                <PriceAndButtons
+                  service_price_object={brake.car_price}
+                  service_price={brake.service_price}
+                  weeksToArrive={brake.weeks_to_arrive}
+                />
               </div>
             </div>
           ))}

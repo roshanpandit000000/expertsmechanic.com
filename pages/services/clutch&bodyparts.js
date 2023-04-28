@@ -13,7 +13,8 @@ function clutchbodyparts() {
   return (
     <>
       <Layout title="Clutch & Body Parts">
-      <div className="overflow-y-hidden pt-20"><SelectedCar />
+        <div className="overflow-y-hidden pt-20">
+          <SelectedCar />
           <div className="xl:mx-auto xl:container  xl:px-20 md:px-6 px-4 py-12">
             <div className="lg:flex items-center justify-center lg:space-x-12 2xl:space-x-6">
               <div className>
@@ -43,32 +44,36 @@ function clutchbodyparts() {
                         </h2>
 
                         <p className="lg:w-40 2xl:w-52 text-base leading-6 mt-2 text-gray-600">
-                         {service.description}
+                          {service.description}
                         </p>
 
                         <p className="lg:w-40 2xl:w-52 text-base leading-6 mt-2 text-gray-600">
-                        {service.description1}
+                          {service.description1}
                         </p>
                         <p className="lg:w-40 2xl:w-52 text-base leading-6 mt-2 text-gray-600">
-                        {service.description2}
+                          {service.description2}
                         </p>
                       </div>
                     </div>
                     <div className="flex items-center ">
                       <div className="flex items-start flex-col  ">
                         <p className="lg:w-40 2xl:w-52 text-base leading-6 lg:mt-12 mt-2 sm:mt-1 text-gray-600">
-                        {service.description3}
+                          {service.description3}
                         </p>
                         <p className="lg:w-40 2xl:w-52 text-base leading-6 mt-2 text-gray-600">
-                        {service.description4}
+                          {service.description4}
                         </p>
                         <p className="lg:w-40 2xl:w-52 text-base leading-6 mt-2 text-gray-600">
-                        {service.description5}
+                          {service.description5}
                         </p>
                       </div>
                     </div>
                     <div className="flex items-center">
-                      <PriceAndButtons />
+                      <PriceAndButtons
+                        service_price_object={service.car_price}
+                        service_price={service.service_price}
+                        weeksToArrive={service.weeks_to_arrive}
+                      />
                     </div>
                   </div>
                 ))}

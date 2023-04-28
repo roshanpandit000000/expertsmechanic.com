@@ -6,8 +6,17 @@ import { useRouter } from "next/router";
 
 import React, { useContext, useEffect } from "react";
 
-const CarCard = ({ name, image, showAsSelected, id, onClick }) => {
-  const { asPath } = useRouter();
+const CarCard = ({
+  name,
+  image,
+  showAsSelected,
+  id,
+  onClick,
+  desc,
+  fuel_type,
+  year,
+}) => {
+  const { asPath,pathname } = useRouter();
 
   const {
     setSearchInfo,
@@ -37,7 +46,16 @@ const CarCard = ({ name, image, showAsSelected, id, onClick }) => {
           width={80}
           height={0}
         />
-        <span className="text-gray-900 font-bold capitalize">{name}</span>
+        <section className="flex flex-col capitalize justify-center items-center ">
+          <span className="text-gray-900 font-bold ">
+            {name + " " + year } 
+            
+          </span>
+
+          <span className="text-gray-600 text-sm">{desc}</span>
+
+          <span className="text-gray-600 text-sm">fuel:{fuel_type}</span>
+        </section>
       </Link>
     );
   }
@@ -46,11 +64,12 @@ const CarCard = ({ name, image, showAsSelected, id, onClick }) => {
       href={`${asPath}/?carModel=${id}&carMake=${name}`}
       as={`${asPath}`}
       onClick={
-        onClick ?
-        (() => {
-          onClick();
-          setSearchInfo("");
-        }) :   () => setSearchInfo("")
+        onClick
+          ? () => {
+              onClick();
+              setSearchInfo("");
+            }
+          : () => setSearchInfo("")
       }
       className="shadow-md items-center justify-center py-5 px-8 flex flex-col gap-3"
     >

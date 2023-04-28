@@ -22,6 +22,20 @@ export const cars = [
         year: 1993,
       },
       {
+        city_mpg: 18,
+        class: "midsize car",
+        combination_mpg: 21,
+        cylinders: 4,
+        displacement: 2.2,
+        drive: "fwd",
+        fuel_type: "gas",
+        highway_mpg: 26,
+        make: "chevrolet",
+        model: "king car",
+        transmission: "a",
+        year: 1993,
+      },
+      {
         city_mpg: 17,
         class: "midsize car",
         combination_mpg: 20,
@@ -3165,7 +3179,7 @@ export const cars = [
     ],
   },
   {
-    id:11,
+    id: 11,
     name: "Mazda",
     image: "/cars/mazda.png",
     car_images: "/cars/mazda2.png",
@@ -3452,7 +3466,8 @@ export const cars = [
       },
     ],
   },
-  {id:12,
+  {
+    id: 12,
     name: "Honda",
     image: "/cars/honda.png",
     car_images: "/cars/honda2.png",
@@ -3739,7 +3754,8 @@ export const cars = [
       },
     ],
   },
-  {id:13,
+  {
+    id: 13,
     name: "Audi",
     image: "/cars/audi.png",
     car_images: "/cars/hyundai2.png",
@@ -4026,7 +4042,8 @@ export const cars = [
       },
     ],
   },
-  {id:14,
+  {
+    id: 14,
     name: "Jeep",
     image: "/cars/jeep.png",
     car_images: "/cars/jeep2.png",
@@ -4313,7 +4330,8 @@ export const cars = [
       },
     ],
   },
-  {id:15,
+  {
+    id: 15,
     name: "Subaru",
     image: "/cars/subaru.png",
     car_images: "/cars/subaru2.png",
@@ -4600,7 +4618,8 @@ export const cars = [
       },
     ],
   },
-  {id:16,
+  {
+    id: 16,
     name: "Pontiac",
     image: "/cars/pontiac.png",
     car_images: "/cars/pontiac2.png",
@@ -4887,7 +4906,8 @@ export const cars = [
       },
     ],
   },
-  {id:17,
+  {
+    id: 17,
     name: "Volvo",
     image: "/cars/volvo.png",
     car_images: "/cars/volvo2.png",
@@ -5175,7 +5195,7 @@ export const cars = [
     ],
   },
   {
-    id:18,
+    id: 18,
     name: "Hyundai",
     image: "/cars/hyundai.png",
     car_images: "/cars/hyundai2.png",
@@ -5463,7 +5483,7 @@ export const cars = [
     ],
   },
   {
-    id:19,
+    id: 19,
     name: "Chrysler",
     image: "/cars/chrysler.png",
     car_images: "/cars/chrysler2.png",
@@ -5750,7 +5770,8 @@ export const cars = [
       },
     ],
   },
-  { id:20,
+  {
+    id: 20,
     name: "Lamborghini",
     image: "/cars/lamborghini.png",
     car_images: "/cars/lamborghini2.png",
@@ -6037,7 +6058,8 @@ export const cars = [
       },
     ],
   },
-  {id:21,
+  {
+    id: 21,
     name: "Lexus",
     image: "/cars/lexus.png",
     car_images: "/cars/lexus2.png",

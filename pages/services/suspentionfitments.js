@@ -9,11 +9,12 @@ import PriceAndButtons from "@/components/PriceAndButtons";
 
 function suspentionfitments() {
   const { state, dispatch } = useContext(Store);
- 
+
   return (
     <>
       <Layout title="Suspention & Fitments">
-      <div className="overflow-y-hidden mt-20"><SelectedCar />
+        <div className="overflow-y-hidden mt-20">
+          <SelectedCar />
           <div className="xl:mx-auto xl:container  xl:px-20 md:px-6 px-4 py-12 ">
             <div className="lg:flex items-center justify-center lg:space-x-12 2xl:space-x-6">
               <div className>
@@ -68,7 +69,11 @@ function suspentionfitments() {
                       </div>
                     </div>
                     <div className="flex items-center">
-                     <PriceAndButtons />
+                      <PriceAndButtons
+                        service_price_object={service.car_price}
+                        service_price={service.service_price}
+                        weeksToArrive={service.weeks_to_arrive}
+                      />
                     </div>
                   </div>
                 ))}

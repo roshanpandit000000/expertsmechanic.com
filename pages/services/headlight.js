@@ -19,7 +19,7 @@ function headlight() {
     <>
       <Layout title="">
         <div className="overflow-y-hidden mt-24">
-          <SelectedCar/>
+          <SelectedCar />
           <div className="xl:mx-auto xl:container  xl:px-20 md:px-6 px-4 py-12">
             <div className="lg:flex items-center justify-center lg:space-x-12 2xl:space-x-6">
               <div className>
@@ -70,7 +70,11 @@ function headlight() {
                       </div>
                     </div>
                     <div className="flex items-center">
-                    <PriceAndButtons />
+                      <PriceAndButtons
+                        service_price_object={headlight.car_price}
+                        service_price={headlight.service_price}
+                        weeksToArrive={headlight.weeks_to_arrive}
+                      />
                     </div>
                   </div>
                 ))}

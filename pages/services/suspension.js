@@ -58,7 +58,11 @@ function suspension() {
                 </div>
               </div>
               <div className="flex items-center">
-                <PriceAndButtons />
+              <PriceAndButtons
+                    service_price_object={brake.car_price}
+                    service_price={brake.service_price}
+                    weeksToArrive={brake.weeks_to_arrive}
+                  />
               </div>
             </div>
           ))}

@@ -16,6 +16,9 @@ const SelectedCar = () => {
           name={`${selectedVehicle[0].make} ${selectedVehicle[0].model}`}
           image={cars[selectedVehicleImage].car_images}
           showAsSelected={true}
+          desc={selectedVehicle[0].class}
+          year={selectedVehicle[0].year}
+          fuel_type={selectedVehicle[0].fuel_type}
         />
       </div>
     );

@@ -69,7 +69,11 @@ function detailedservice() {
                       </div>
                     </div>
                     <div className="flex items-center">
-                      <PriceAndButtons />
+                    <PriceAndButtons
+                        service_price_object={service.car_price}
+                        service_price={service.service_price}
+                        weeksToArrive={service.weeks_to_arrive}
+                      />
                     </div>
                   </div>
                 ))}

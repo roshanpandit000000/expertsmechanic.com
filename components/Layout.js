@@ -27,8 +27,12 @@ function Layout({ title, children }) {
     searchInfo,
     setSearchInfo,
   } = useContext(Store);
-  // console.log(cars[0]["name"])
+
+
   const { cart } = state;
+
+
+  // function that handle the search bar
   const search = (returnData, [keywords]) => {
     const searchedValue = () => {
       return returnData.filter((items) =>
@@ -731,7 +735,7 @@ function Layout({ title, children }) {
               {search(cars, ["name"]).length > 0 ? (
                 <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 h-full py-5 ">
                   {!router.query.carModel || router.query.carModel === ""
-                    ? search(cars, ["name"]).map((items) => {
+                    ? search(cars, ["name"])?.map((items) => {
                         return (
                           <CarCard
                             key={items.id}
@@ -746,9 +750,9 @@ function Layout({ title, children }) {
                         cars.find((items) => {
                           imageToShow = items.id;
                           return items.id == router.query.carModel;
-                        }).models,
+                        })?.models,
                         ["model"]
-                      ).map((items, index) => {
+                      )?.map((items, index) => {
                         const allModelsinSelectedBrand = items;
 
                         return (
@@ -759,7 +763,9 @@ function Layout({ title, children }) {
                             image={cars[router.query.carModel].car_images}
                             showAsSelected={false}
                             onClick={() => {
-                              setSelectedVehicle([allModelsinSelectedBrand]);
+                              setSelectedVehicle([
+                                { ...allModelsinSelectedBrand, discount: 40 },
+                              ]);
                               setModalOpen(!modalOpen);
                               setSelectedVehicleImage(imageToShow);
                             }}

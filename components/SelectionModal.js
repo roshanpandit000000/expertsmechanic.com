@@ -21,7 +21,7 @@ const SelectionModal = ({ children, isOpen, handleClose }) => {
       document.body.style.overflow = "unset";
     };
   }, [isOpen]);
-  console.log(query)
+  // console.log(query)
   if (!isOpen) return null;
   
   return (
