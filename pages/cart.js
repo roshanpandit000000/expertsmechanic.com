@@ -7,13 +7,14 @@ import React, { useContext } from "react";
 
 function cart() {
   const router = useRouter();
-  const { state, dispatch } = useContext(Store);
+  const { state, dispatch, selectedVehicle } = useContext(Store);
   const {
     cart: { cartItems },
   } = state;
   const removeItemHandler = (item) => {
     dispatch({ type: "CART_REMOVE_ITEM", payload: item });
   };
+ 
   return (
     <>
       <Layout title="Shopping Cart">
@@ -52,7 +53,7 @@ function cart() {
                         </Link>
                       </td>
                       <td className="p-5 text-right">{item.quantity}</td>
-                      <td className="p-5 text-right">${item.price}</td>
+                      <td className="p-5 text-right">${item.quantity * ((item.service_price + item.car_price?.[selectedVehicle[0]?.model]) - selectedVehicle[0].discount)}</td>
                       <td className="p-5 text-center">
                         <button onClick={() => removeItemHandler(item)}>
                           <svg
@@ -81,8 +82,11 @@ function cart() {
                 <li>
                   <div className="pb-3 text-xl">
                     Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}) :
-                    ${cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
+                    <strike>${cartItems.reduce((a, c) => a + c.quantity * (c.service_price + c.car_price?.[selectedVehicle[0]?.model]), 0)}</strike>
+                   ${cartItems.reduce((a, c) => a + c.quantity * ((c.service_price + c.car_price?.[selectedVehicle[0]?.model]) - selectedVehicle[0].discount), 0)}
                   </div>
+                  <br />
+                  <p>Applying your discount of ${selectedVehicle[0].discount}</p>
                 </li>
                 <li>
                   <button

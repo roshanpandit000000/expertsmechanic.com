@@ -73,6 +73,7 @@ function clutchbodyparts() {
                         service_price_object={service.car_price}
                         service_price={service.service_price}
                         weeksToArrive={service.weeks_to_arrive}
+                        serviceItem ={service}
                       />
                     </div>
                   </div>

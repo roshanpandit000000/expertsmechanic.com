@@ -74,6 +74,7 @@ function headlight() {
                         service_price_object={headlight.car_price}
                         service_price={headlight.service_price}
                         weeksToArrive={headlight.weeks_to_arrive}
+                        serviceItem ={headlight}
                       />
                     </div>
                   </div>

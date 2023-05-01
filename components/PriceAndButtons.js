@@ -8,13 +8,14 @@ const PriceAndButtons = ({
   weeksToArrive,
   service_price_object,
   service_price,
+  serviceItem
 }) => {
   const { state, dispatch, setModalOpen, modalOpen, selectedVehicle } =
     useContext(Store);
   const { query } = useRouter();
   const { slug } = query;
-  const periodicservices = servicedata.periodics.find((x) => x.slug === slug);
-
+  const periodicservices = servicedata.services.find((x) => x.slug === slug)
+// console.log(serviceItem)
   const findItems = () => {
     if (
       service_price_object &&
@@ -44,18 +45,19 @@ const PriceAndButtons = ({
 
   const addToCartHandler = () => {
     const existItem = state.cart.cartItems.find(
-      (x) => x.slug === periodicservices.slug
+      (x) => x.name === serviceItem.name
     );
+
     const quantity = existItem ? existItem.quantity + 1 : 1;
 
-    if (periodicservices.countInStock < quantity) {
+    if (serviceItem.countInStock < quantity) {
       alert("Sorry. Product is out of stock");
       return;
     }
 
     dispatch({
       type: "CART_ADD_ITEM",
-      payload: { ...periodicservices, quantity },
+      payload: { ...serviceItem, quantity },
     });
   };
 

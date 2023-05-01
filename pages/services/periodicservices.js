@@ -113,6 +113,7 @@ function periodicservices() {
                     service_price_object={periodic.car_price}
                     service_price={periodic.service_price}
                     weeksToArrive={periodic.weeks_to_arrive}
+                    serviceItem ={periodic}
                   />
                 </div>
                 {/* Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border */}
