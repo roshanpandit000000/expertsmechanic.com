@@ -33,7 +33,7 @@ export const cars = [
         make: "chevrolet",
         model: "king car",
         transmission: "a",
-        year: 1993,
+        year: 2023,
       },
       {
         city_mpg: 17,

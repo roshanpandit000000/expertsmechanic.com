@@ -1,5 +1,5 @@
 class carsDefaultPrice {
-  
+  "king car" = 50.99
   lumina = 19.99;
   caprice = 21.99;
   "caprice wagon" = 15.99;

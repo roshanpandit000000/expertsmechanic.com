@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SelectedCar from "@/components/SelectedCar";
 import { Store } from "@/utils/Store";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,11 +15,16 @@ function cart() {
   const removeItemHandler = (item) => {
     dispatch({ type: "CART_REMOVE_ITEM", payload: item });
   };
- 
+  console.log(cartItems);
   return (
     <>
       <Layout title="Shopping Cart">
-        <h1 className="mb-4 text-xl mt-24">Shopping Cart</h1>
+        <section className="mb-4 mt-24 flex w-full justify-between items-center sm:flex-col flex-col lg:flex-row ">
+          {" "}
+          <h1 className=" text-2xl w-full text-bold ">Shopping Cart</h1>{" "}
+          <SelectedCar />
+        </section>
+
         {cartItems.length === 0 ? (
           <div>
             Cart is empty. <Link href="/">Go shopping</Link>
@@ -39,7 +45,7 @@ function cart() {
                   {cartItems.map((item) => (
                     <tr key={item.slug} className="border-b">
                       <td>
-                        <Link legacyBehavior href={`/product/${item.slug}`}>
+                        <Link legacyBehavior href={`/product/${item.name}`}>
                           <a className="flex items-center">
                             <Image
                               src={item.image}
@@ -53,7 +59,15 @@ function cart() {
                         </Link>
                       </td>
                       <td className="p-5 text-right">{item.quantity}</td>
-                      <td className="p-5 text-right">${item.quantity * ((item.service_price + item.car_price?.[selectedVehicle[0]?.model]) - selectedVehicle[0].discount)}</td>
+                      <td className="p-5 text-right">
+                        $
+                        {item.quantity *
+                          (item.service_price +
+                            Math.floor(
+                              item.car_price?.[selectedVehicle[0]?.model]
+                           ) -
+                            selectedVehicle[0].discount)}
+                      </td>
                       <td className="p-5 text-center">
                         <button onClick={() => removeItemHandler(item)}>
                           <svg
@@ -81,17 +95,51 @@ function cart() {
               <ul>
                 <li>
                   <div className="pb-3 text-xl">
-                    Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}) :
-                    <strike>${cartItems.reduce((a, c) => a + c.quantity * (c.service_price + c.car_price?.[selectedVehicle[0]?.model]), 0)}</strike>
-                   ${cartItems.reduce((a, c) => a + c.quantity * ((c.service_price + c.car_price?.[selectedVehicle[0]?.model]) - selectedVehicle[0].discount), 0)}
+                    {" "}
+                    <span className="my-5">
+                      Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)})
+                      :
+                      <span className="font-bold text-2xl ml-3">
+                        $
+                        {cartItems.reduce(
+                          (a, c) =>
+                            a +
+                            c.quantity *
+                              (c.service_price +
+                                Math.floor(
+                                  c.car_price?.[selectedVehicle[0]?.model]
+                                ) -
+                                selectedVehicle[0].discount),
+                          0
+                        )}{" "}
+                      </span>{" "}
+                      <strike className="text-ms text-gray-700/70">
+                        $
+                        {cartItems.reduce(
+                          (a, c) =>
+                            a +
+                            c.quantity *
+                              (c.service_price +
+                                Math.floor(  c.car_price?.[selectedVehicle[0]?.model])),
+                          0
+                        )}
+                      </strike>
+                      <p>
+                        Total discount of $
+                        {cartItems.reduce(
+                          (a, c) =>
+                            a + c.quantity * selectedVehicle[0].discount,
+                          0
+                        )}
+                      </p>
+                    </span>
                   </div>
                   <br />
-                  <p>Applying your discount of ${selectedVehicle[0].discount}</p>
                 </li>
                 <li>
                   <button
                     onClick={() => router.push("/shipping")}
-                    className="primary-button w-full"
+                    className="w-full  hover:border-stone/300 capitalize rounded-md py-2 px-4 hover:border-2 hover:bg-white hover:text-gray-900 overflow-hidden bg-blue-700 text-white font-medium"
                   >
                     Check Out
                   </button>
