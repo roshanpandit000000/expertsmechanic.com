@@ -20,8 +20,6 @@ export default function Home() {
     <>
       <Layout title="Home">
         <HomePageSlider />
-        
-        <SelectBox />
         <Services />
         <CustomServices />
         <MechanicSpecial />
