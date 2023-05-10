@@ -74,6 +74,7 @@ function acservice() {
                   service_price_object={periodic.car_price}
                   service_price={periodic.service_price}
                   weeksToArrive={periodic.weeks_to_arrive}
+                  serviceItem ={periodic}
                 />
               </div>
             </div>
@@ -129,6 +130,7 @@ function acservice() {
                   service_price_object={brake.car_price}
                   service_price={brake.service_price}
                   weeksToArrive={brake.weeks_to_arrive}
+                  serviceItem ={brake}
                 />
               </div>
             </div>

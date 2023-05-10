@@ -5,8 +5,14 @@ import React, { useContext } from "react";
 import { cars } from "@/utils/cars";
 
 const SelectedCar = () => {
-  const { state, dispatch, setModalOpen, modalOpen, selectedVehicle, selectedVehicleImage } =
-    useContext(Store);
+  const {
+    state,
+    dispatch,
+    setModalOpen,
+    modalOpen,
+    selectedVehicle,
+
+  } = useContext(Store);
 
   if (selectedVehicle.length > 0) {
     return (
@@ -14,7 +20,7 @@ const SelectedCar = () => {
         <CarCard
           id={""}
           name={`${selectedVehicle[0].make} ${selectedVehicle[0].model}`}
-          image={cars[selectedVehicleImage].car_images}
+          image={selectedVehicle[0].car_image}
           showAsSelected={true}
           desc={selectedVehicle[0].class}
           year={selectedVehicle[0].year}

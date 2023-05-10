@@ -10,8 +10,7 @@ import CarCard from "./CarCard";
 import { useRouter } from "next/router";
 import { useRef } from "react";
 
-//we will remove this variable and selectedVehicleImage state later when data for cars is complete
-let imageToShow = "0";
+
 
 function Layout({ title, children }) {
   const router = useRouter();
@@ -750,7 +749,7 @@ function Layout({ title, children }) {
                       })
                     : search(
                         cars.find((items) => {
-                          imageToShow = items.id;
+                   
                           return items.id == router.query.carModel;
                         })?.models,
                         ["model"]
@@ -762,14 +761,14 @@ function Layout({ title, children }) {
                             key={index}
                             id={index}
                             name={items.model}
-                            image={cars[router.query.carModel].car_images}
+                            image={items.car_image}
                             showAsSelected={false}
                             onClick={() => {
                               setSelectedVehicle([
                                 { ...allModelsinSelectedBrand, discount: 40 },
                               ]);
                               setModalOpen(!modalOpen);
-                              setSelectedVehicleImage(imageToShow);
+                           
                             }}
                           />
                         );

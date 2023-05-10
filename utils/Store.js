@@ -36,7 +36,6 @@ function reducer(state, action) {
 export function StoreProvider({ children }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedVehicle, setSelectedVehicle] = useState([]);
-  const [selectedVehicleImage, setSelectedVehicleImage] = useState("");
   const [searchInfo, setSearchInfo] = useState("");
   const [state, dispatch] = useReducer(reducer, initialState);
   const value = {
@@ -45,9 +44,7 @@ export function StoreProvider({ children }) {
     modalOpen,
     setModalOpen,
     selectedVehicle,
-    selectedVehicleImage,
     setSelectedVehicle,
-    setSelectedVehicleImage,
     searchInfo,
     setSearchInfo,
   };
