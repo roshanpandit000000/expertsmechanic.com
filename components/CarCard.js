@@ -37,7 +37,7 @@ const CarCard = ({
           setSearchInfo("");
           setModalOpen(!modalOpen);
         }}
-        className=" bg-white shadow-lg flex w-fit items-center justify-between gap-4 py-4 px-7"
+        className=" bg-white shadow-lg flex w-fit items-center justify-between gap-4 py-4 px-20"
       >
         <Image
           className="w-auto h-auto"
@@ -54,7 +54,7 @@ const CarCard = ({
 
           <span className="text-gray-600 text-sm">{desc}</span>
 
-          <span className="text-gray-600 text-sm">fuel:{fuel_type}</span>
+          
         </section>
       </Link>
     );

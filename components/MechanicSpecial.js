@@ -5,8 +5,8 @@ function MechanicSpecial() {
   return (
     <>
       <div className="mt-16">
-        <div className="container mx-auto my-3">
-          <h1 class="flex items-center text-3xl sm:text-3xl lg:text-4xl font-bold  lg:ml-40 ml-5 sm:ml-5">
+        <div className="container mx-auto my-3 text-center">
+          <h1 class="text-3xl sm:text-3xl lg:text-4xl font-bold">
             EM Special
             <span class="bg-blue-100 text-blue-800 text-lg font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-2">
               PRO
@@ -14,7 +14,7 @@ function MechanicSpecial() {
           </h1>
         </div>
       </div>
-      <div className="container mx-auto grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-6 gap-1 px- sm:px- lg:px-32 justify-items-center ...">
+      <div className="container mx-auto grid sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-3 xl:grid-cols-4 pt-6 gap-1 md:gap-x-0 md:px-10 lg:gap-x-0 lg:px-10 xl:gap-x-0 xl:px-20 justify-items-center ...">
         {/* Remove class [ h-24 ] when adding a card block */}
         {/* Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border */}
         <div className="">

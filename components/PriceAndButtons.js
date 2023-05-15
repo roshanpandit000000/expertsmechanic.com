@@ -5,11 +5,13 @@ import React, { Children, useContext } from "react";
 import { useRouter } from "next/router";
 
 const PriceAndButtons = ({
+  
   weeksToArrive,
   service_price_object,
   service_price,
   serviceItem
 }) => {
+  const router = useRouter();
   const { state, dispatch, setModalOpen, modalOpen, selectedVehicle } =
     useContext(Store);
   const { query } = useRouter();
@@ -59,6 +61,7 @@ const PriceAndButtons = ({
       type: "CART_ADD_ITEM",
       payload: { ...serviceItem, quantity },
     });
+    router.push("/cart")
   };
 
   if (selectedVehicle.length > 0) {
@@ -66,7 +69,7 @@ const PriceAndButtons = ({
       <div className="flex items-start justify-between flex-col gap-10">
         {service_price_object?.[selectedVehicle[0]?.model] && findItems() ? (
           <>
-            <span className="flex items-center gap-2 ">
+            <span className="flex items-center gap-2 lg:ml-20 sm:ml-0 ml-0">
               <h2 className="text-xl">
                 ${findItems() - selectedVehicle[0].discount}.99
               </h2>
@@ -74,7 +77,7 @@ const PriceAndButtons = ({
                 ${findItems()}.99
               </strike>
             </span>
-            <section className="h-24">
+            <section className="h-24 lg:ml-20 sm:ml-0 ml-0">
               <button
                 onClick={addToCartHandler}
                 className="hover:border-stone/300  capitalize rounded-md py-2 px-4 hover:border-2 hover:bg-white hover:text-gray-900 overflow-hidden bg-blue-700 text-white font-medium"
@@ -105,11 +108,11 @@ const PriceAndButtons = ({
   }
 
   return (
-    <span className="w-40 h-16 p-2">
+    <span className="lg:ml-20 sm:ml-0 ml-0">
       {" "}
       <button
         onClick={() => setModalOpen(!modalOpen)}
-        className="hover:border-stone/300 capitalize h-fit w-fit rounded-md py-2 px-4 hover:border-2 hover:bg-white hover:text-gray-900 overflow-hidden bg-blue-700 text-white font-medium "
+        className="text-md hover:border-stone/300 capitalize rounded-md py-3 px-5 hover:border-2 hover:bg-white hover:text-gray-900 overflow-hidden bg-blue-700 text-white font-medium"
       >
         select Vehicle
       </button>

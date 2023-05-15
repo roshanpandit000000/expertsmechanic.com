@@ -15,7 +15,6 @@ import WorkShop from "@/components/WorkShop";
 import MechanicSpecial from "@/components/MechanicSpecial";
 import LuxuryCar from "@/components/LuxuryCar";
 
-
 export default function Home() {
   return (
     <>
@@ -23,9 +22,7 @@ export default function Home() {
         <HomePageSlider />
         <Services />
         <CustomServices />
-        <MechanicSpecial />
         <WorkShop />
-        <LuxuryCar />
         <Banafits />
         <Profits />
         <Testimoniul />

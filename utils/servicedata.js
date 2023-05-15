@@ -411,8 +411,8 @@ const servicedata = {
       warranty: "2 Months Warranty",
       month: "Every 5,000 Kms / 3 Months",
       included:
-        "-Heater/Spark Plugs, -Engine Oil, Oil Filter, Wiper Fluid Coolant (200 ml), Battery Water (500 ml",
-      other: "Health Reporting -Dashboard Polishing -Tyre Polishing",
+        "Inspection:- Heater/Spark Plugs, Replacement:- Engine Oil / Oil Filter / Wiper Fluid Top-up /  Coolant (200 ml) / Battery Water (500 ml)",
+      other: "-Health Reporting / Dashboard Polishing / Tyre Polishing",
       image: "/servicesimage/periodic/basic.jpg",
       countInStock: 20,
       weeks_to_arrive: 4,
@@ -425,8 +425,8 @@ const servicedata = {
       warranty: "2 Months Warranty",
       month: "Every 5,000 Kms / 3 Months",
       included:
-        "-Heater/Spark Plugs, -Engine Oil, Oil Filter, Wiper Fluid Coolant (200 ml), Battery Water (500 ml",
-      other: "Health Reporting -Dashboard Polishing -Tyre Polishing",
+        "Inspection:- Heater/Spark Plugs / Fuel Filter, Replacement:- Engine Oil / Oil Filter / Wiper Fluid Air Filter, Top-up:- Coolant (200 ml) / Battery Water (500 ml) / Brake Fluid (50 ml)",
+      other: "-Health Reporting / Dashboard Polishing / Tyre Polishing",
       image: "/servicesimage/periodic/advanced.jpg",
       countInStock: 20,
       weeks_to_arrive: 4,
@@ -439,8 +439,8 @@ const servicedata = {
       warranty: "2 Months Warranty",
       month: "Every 5,000 Kms / 3 Months",
       included:
-        "-Heater/Spark Plugs, -Engine Oil, Oil Filter, Wiper Fluid Coolant (200 ml), Battery Water (500 ml",
-      other: "Health Reporting -Dashboard Polishing -Tyre Polishing",
+        "Inspection:- Heater/Spark Plugs / Fuel Filter, Replacement:- Engine Oil / Oil Filter / Wiper Fluid Air Filter, Top-up:- Coolant (200 ml) / Battery Water (500 ml) / Brake Fluid (50 ml)",
+      other: "-Health Reporting / Dashboard Polishing / Tyre Polishing",
       image: "/servicesimage/periodic/primeium.jpg",
       countInStock: 20,
       weeks_to_arrive: 4,

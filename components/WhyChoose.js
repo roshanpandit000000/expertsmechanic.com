@@ -3,8 +3,8 @@ import React from "react";
 function WhyChoose() {
   return (
     <>
-      <div className="container mx-auto mt-24">
-        <h1 class="flex items-center text-3xl sm:text-3xl lg:text-4xl font-bold  lg:ml-40 ml-5 sm:ml-5">
+      <div className="container mx-auto mt-24 text-center">
+        <h1 class="text-3xl sm:text-3xl lg:text-4xl font-bold">
           Why choose your car service in Delhi?
           <span class="bg-blue-100 text-blue-800 text-lg font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-2">
             PRO
@@ -12,7 +12,7 @@ function WhyChoose() {
         </h1>
       </div>
       <div className="overflow-y-hidden">
-        <div className="pb-">
+        <div className="">
           {/* Code block starts */}
           <dh-component>
             <section className="bg-indigo-700 py-12 mt-10">
