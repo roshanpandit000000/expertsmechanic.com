@@ -24,7 +24,6 @@ function periodicservices() {
     <>
       <Layout title="Periodic Services">
         <div className="container mx-auto mt-24">
-         
           <div className="container mx-auto lg:container px-10 xl:px-20 sm:px-10 ">
             <p className=" mt-20 lg:text-4xl text-3xl font-extrabold leading-9 text-gray-800">
               Services included
@@ -34,7 +33,7 @@ function periodicservices() {
               witty books nor son add
             </p>
             <SelectedCar />
-            {servicedata.periodics.map((periodic) => {
+            {servicedata.Periodics.map((periodic) => {
               return (
                 <div className="w-full lg:w-full mt-10 mb-16 ">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 lg:gap-12 gap-10">
@@ -44,7 +43,7 @@ function periodicservices() {
                         <Image
                           src={periodic.image}
                           alt={periodic.name}
-                          width={200}
+                          width={250}
                           height={0}
                         />
                       </div>
@@ -64,12 +63,37 @@ function periodicservices() {
                       </div>
                       <div className=" mt-8 ml-20 w-2/6">
                         <p className="mt-2 font-medium text-base leading-6 text-gray-600">
-                          {periodic.included}
+                          {periodic.description}
                         </p>
                         <p className="mt-2 font-medium text-base leading-6 text-gray-600">
-                          {periodic.other}
+                          {periodic.description1}
+                        </p>
+                        <p className="mt-2 font-medium text-base leading-6 text-gray-600">
+                          {periodic.description2}
+                        </p>
+                        <p className="mt-2 font-medium text-base leading-6 text-gray-600">
+                          {periodic.description3}
+                        </p>
+                        <p className="mt-2 font-medium text-base leading-6 text-gray-600">
+                          {periodic.description4}
                         </p>
                       </div>
+                      <div className=" mt-8 ml-0 w-2/6">
+                       
+                        <p className="mt-2 font-medium text-base leading-6 text-gray-600">
+                          {periodic.description5}
+                        </p>
+                        <p className="mt-2 font-medium text-base leading-6 text-gray-600">
+                          {periodic.description6}
+                        </p>
+                        <p className="mt-2 font-medium text-base leading-6 text-gray-600">
+                          {periodic.description7}
+                        </p>
+                        <p className="mt-2 font-medium text-base leading-6 text-gray-600">
+                          {periodic.description8}
+                        </p>
+                      </div>
+
                       <div>
                         <PriceAndButtons
                           service_price_object={periodic.car_price}
@@ -89,7 +113,7 @@ function periodicservices() {
         {/* brake */}
         <div className="container mx-auto lg:container px-10 xl:px-20 sm:px-10 ">
           <p className=" mt-20 lg:text-4xl text-3xl font-extrabold leading-9 text-gray-800">
-            Why choose us
+          Brake Maintenance
           </p>
           <p className="text-lg leading-7 text-gray-600 mt-4 xl:w-7/12 w-full">
             Whether article spirits new her covered hastily sitting her. Money
@@ -132,6 +156,12 @@ function periodicservices() {
                       </p>
                       <p className="mt-2 font-medium text-base leading-6 text-gray-600">
                         {brake.description5}
+                      </p>
+                      <p className="mt-2 font-medium text-base leading-6 text-gray-600">
+                        {brake.description6}
+                      </p>
+                      <p className="mt-2 font-medium text-base leading-6 text-gray-600">
+                        {brake.description7}
                       </p>
                     </div>
                     <div>
