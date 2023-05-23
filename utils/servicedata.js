@@ -1,4 +1,5 @@
 class carsDefaultPrice {
+  "Alturas G4" = 200;
   800 = 50.99;
   "A-Star" = 19.99;
   "Alto 800" = 21.99;
@@ -172,6 +173,14 @@ class carsDefaultPrice {
   // "gs 300" = 19.99;
   // "ls 400" = 21.99;
   // "lx 450" = 33.0;
+}
+
+class periodicBasicService {
+  "Alturas G4" = 200;
+}
+
+class periodicAdvanceService{
+  "Alturas G4" = 500;
 }
 
 const servicedata = {
@@ -417,7 +426,7 @@ const servicedata = {
       countInStock: 20,
       weeks_to_arrive: 4,
       service_price: 155.0,
-      car_price: new carsDefaultPrice(),
+      car_price: new periodicBasicService(),
     },
     {
       name: "Advance Service",
@@ -431,7 +440,7 @@ const servicedata = {
       countInStock: 20,
       weeks_to_arrive: 4,
       service_price: 180.0,
-      car_price: new carsDefaultPrice(),
+      car_price: new periodicAdvanceService(),
     },
     {
       name: "Premium Service",
@@ -449,22 +458,65 @@ const servicedata = {
     },
   ],
   // before you repeated this "front brake pad" object multiple tiimes, so here i make a short function to multiply it 8 times
-  Brakes: Array.from({ length: 8 }, () => {
-    return {
-      name: "Front Brake Pads",
-      description: "1 Month Warranty on Fitting",
-      description1: "For Broken / Cracked Lights (Recommended)",
-      description2: "Headlight OES (Price for single unit)",
-      description3: "Free Pickup & Drop",
-      description4: "Opening & Fitting of Bumper/Headlight",
-      description5: "Projector/LEDs/DRLs Additional (If Applicable)",
-      image: "/servicesimage/brake/front.jpg",
-      countInStock: 20,
-      service_price: 64.0,
-      weeks_to_arrive: 7,
-      car_price: new carsDefaultPrice(),
-    };
-  }),
+ Brakes: [
+   {
+     name: "Front Brake Pads",
+     description: "1 Month Warranty on Fitting",
+     description1: "Opening & Fitting of Front Brake Pads",
+     description2: "Front Brake Pads Replacement",
+     description3: "Applicable for Set of 2 Front Brake Pads",
+     description4: "Inspection of Front Brake Calipers",
+     description5: "Front Brake Disc Cleaning",
+     image: "/servicesimage/brake/front.jpg",
+     countInStock: 20,
+     service_price: 64.0,
+     weeks_to_arrive: 7,
+     car_price: new carsDefaultPrice(),
+   },
+   {
+    name: "Rear Brake Shoes",
+    description: "1 Month Warranty on Fitting",
+    description1: "Opening & Fitting of Front Brake Pads",
+    description2: "Front Brake Pads Replacement",
+    description3: "Applicable for Set of 2 Front Brake Pads",
+    description4: "Inspection of Front Brake Calipers",
+    description5: "Front Brake Disc Cleaning",
+    image: "/servicesimage/brake/front.jpg",
+    countInStock: 20,
+    service_price: 64.0,
+    weeks_to_arrive: 7,
+    car_price: new carsDefaultPrice(),
+  },
+  {
+    name: "Front Brake Pads",
+    description: "1 Month Warranty on Fitting",
+    description1: "Opening & Fitting of Front Brake Pads",
+    description2: "Front Brake Pads Replacement",
+    description3: "Applicable for Set of 2 Front Brake Pads",
+    description4: "Inspection of Front Brake Calipers",
+    description5: "Front Brake Disc Cleaning",
+    image: "/servicesimage/brake/front.jpg",
+    countInStock: 20,
+    service_price: 64.0,
+    weeks_to_arrive: 7,
+    car_price: new carsDefaultPrice(),
+  },
+ ],
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
 
   Steerings: [
     {
