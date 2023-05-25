@@ -33,7 +33,7 @@ const SearchBar = ({ keywords }) => {
           <input
             type="text"
             id="simple-search"
-            className="bg-gray-50 border border-gray-300 w-full text-gray-900 text-sm rounded-l-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500  focus:border-blue-500 outline-blue-500"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-l-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500  outline-blue-500"
             placeholder="Search"
             onChange={(e) => setSearchInfo(e.target.value)}
             required

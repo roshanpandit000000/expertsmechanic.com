@@ -3,32 +3,32 @@ import { Store } from "@/utils/Store";
 import servicedata from "@/utils/servicedata";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import SelectedCar from "@/components/SelectedCar";
-import PriceAndButtons from "@/components/PriceAndButtons";
 import React, { useContext } from "react";
+import PriceAndButtons from "@/components/PriceAndButtons";
+import SelectedCar from "@/components/SelectedCar";
 
-function carspacleaning() {
-  const { state, dispatch } = useContext(Store);
+function windshield() {
+  const { state, dispatch, selectedVehicle } = useContext(Store);
 
   return (
     <>
-      <Layout title="Car Spa & Cleaning">
-        {/* Winter_Specials */}
+      <Layout title="WindShiels & Lights">
+        {/* Windshields */}
         <div className="container mx-auto lg:container px-10 xl:px-20 sm:px-10 ">
           <p className=" mt-20 lg:text-4xl text-3xl font-extrabold leading-9 text-gray-800">
-            Winter Special
+          Windshield
           </p>
           <p className="text-lg leading-7 text-gray-600 mt-1 xl:w-7/12 w-full">
             Whether article spirits new her covered hastily sitting her. Money
             witty books nor son add
           </p>
           <SelectedCar />
-          {servicedata.Winter_Specials.map((Winter_Special) => (
+          {servicedata.Windshields.map((Windshield) => (
             <div className="flex flex-wrap sm:flex-no-wrap  w-full shadow mb-16 mt-5 rounded-lg">
               <div className="w-full sm:w-1/5  bg-white">
                 <Image
-                  src={Winter_Special.image}
-                  alt={Winter_Special.name}
+                  src={Windshield.image}
+                  alt={Windshield.name}
                   width={200}
                   height={0}
                   className="ml-5 lg:ml-0 mt-0 lg:mt-5"
@@ -37,59 +37,59 @@ function carspacleaning() {
 
               <div className="w-full sm:w-1/5 bg-white ">
                 <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800 lg:mt-0 mt-5 lg:ml-0 ml-5 my-0 lg:my-5 py-0 lg:pt-5">
-                  {Winter_Special.name}
+                  {Windshield.name}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Winter_Special.description}
+                  {Windshield.description}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Winter_Special.description1}
+                  {Windshield.description1}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Winter_Special.description2}
+                  {Windshield.description2}
                 </p>
               </div>
               <div className="w-full sm:w-1/5  bg-white mt-0 lg:mt-16 ml-0 lg:ml-16">
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Winter_Special.description3}
+                  {Windshield.description3}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Winter_Special.description4}
+                  {Windshield.description4}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Winter_Special.description5}
+                  {Windshield.description5}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Winter_Special.description6}
+                  {Windshield.description6}
                 </p>
               </div>
               <div className="w-full sm:w-1/5 my-8 lg:ml-0 ml-5 bg-white mt-0 lg:mt-10">
                 <PriceAndButtons
-                  service_price_object={Winter_Special.car_price}
-                  service_price={Winter_Special.service_price}
-                  weeksToArrive={Winter_Special.weeks_to_arrive}
-                  serviceItem={Winter_Special}
+                  service_price_object={Windshield.car_price}
+                  service_price={Windshield.service_price}
+                  weeksToArrive={Windshield.weeks_to_arrive}
+                  serviceItem={Windshield}
                 />
               </div>
             </div>
           ))}
         </div>
-        {/* Spas */}
+        {/* Glasses */}
         <div className="container mx-auto lg:container px-10 xl:px-20 sm:px-10 ">
           <p className=" mt-20 lg:text-4xl text-3xl font-extrabold leading-9 text-gray-800">
-            Spa
+          Glasses
           </p>
           <p className="text-lg leading-7 text-gray-600 mt-1 xl:w-7/12 w-full">
             Whether article spirits new her covered hastily sitting her. Money
             witty books nor son add
           </p>
 
-          {servicedata.Spas.map((Spa) => (
+          {servicedata.Glasses.map((Glasse) => (
             <div className="flex flex-wrap sm:flex-no-wrap  w-full shadow mb-16 mt-5 rounded-lg">
               <div className="w-full sm:w-1/5  bg-white">
                 <Image
-                  src={Spa.image}
-                  alt={Spa.name}
+                  src={Glasse.image}
+                  alt={Glasse.name}
                   width={200}
                   height={0}
                   className="ml-5 lg:ml-0 mt-0 lg:mt-5"
@@ -98,58 +98,58 @@ function carspacleaning() {
 
               <div className="w-full sm:w-1/5 bg-white ">
                 <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800 lg:mt-0 mt-5 lg:ml-0 ml-5 my-0 lg:my-5 py-0 lg:pt-5">
-                  {Spa.name}
+                  {Glasse.name}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Spa.description}
+                  {Glasse.description}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Spa.description1}
+                  {Glasse.description1}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Spa.description2}
+                  {Glasse.description2}
                 </p>
               </div>
               <div className="w-full sm:w-1/5  bg-white mt-0 lg:mt-16 ml-0 lg:ml-16">
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Spa.description3}
+                  {Glasse.description3}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Spa.description4}
+                  {Glasse.description4}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Spa.description5}
+                  {Glasse.description5}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Spa.description6}
+                  {Glasse.description6}
                 </p>
               </div>
               <div className="w-full sm:w-1/5 my-8 lg:ml-0 ml-5 bg-white mt-0 lg:mt-10">
                 <PriceAndButtons
-                  service_price_object={Spa.car_price}
-                  service_price={Spa.service_price}
-                  weeksToArrive={Spa.weeks_to_arrive}
-                  serviceItem={Spa}
+                  service_price_object={Glasse.car_price}
+                  service_price={Glasse.service_price}
+                  weeksToArrive={Glasse.weeks_to_arrive}
+                  serviceItem={Glasse}
                 />
               </div>
             </div>
           ))}
         </div>
-        {/* Inspections */}
+        {/* Lights */}
         <div className="container mx-auto lg:container px-10 xl:px-20 sm:px-10 ">
           <p className=" mt-20 lg:text-4xl text-3xl font-extrabold leading-9 text-gray-800">
-            Inspection
+          Light
           </p>
           <p className="text-lg leading-7 text-gray-600 mt-1 xl:w-7/12 w-full">
             Whether article spirits new her covered hastily sitting her. Money
             witty books nor son add
           </p>
-          {servicedata.Inspections.map((Inspection) => (
+          {servicedata.Lights.map((Light) => (
             <div className="flex flex-wrap sm:flex-no-wrap  w-full shadow mb-16 mt-5 rounded-lg">
               <div className="w-full sm:w-1/5  bg-white">
                 <Image
-                  src={Inspection.image}
-                  alt={Inspection.name}
+                  src={Light.image}
+                  alt={Light.name}
                   width={200}
                   height={0}
                   className="ml-5 lg:ml-0 mt-0 lg:mt-5"
@@ -158,58 +158,58 @@ function carspacleaning() {
 
               <div className="w-full sm:w-1/5 bg-white ">
                 <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800 lg:mt-0 mt-5 lg:ml-0 ml-5 my-0 lg:my-5 py-0 lg:pt-5">
-                  {Inspection.name}
+                  {Light.name}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Inspection.description}
+                  {Light.description}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Inspection.description1}
+                  {Light.description1}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Inspection.description2}
+                  {Light.description2}
                 </p>
               </div>
               <div className="w-full sm:w-1/5  bg-white mt-0 lg:mt-16 ml-0 lg:ml-16">
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Inspection.description3}
+                  {Light.description3}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Inspection.description4}
+                  {Light.description4}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Inspection.description5}
+                  {Light.description5}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Inspection.description6}
+                  {Light.description6}
                 </p>
               </div>
               <div className="w-full sm:w-1/5 my-8 lg:ml-0 ml-5 bg-white mt-0 lg:mt-10">
                 <PriceAndButtons
-                  service_price_object={Inspection.car_price}
-                  service_price={Inspection.service_price}
-                  weeksToArrive={Inspection.weeks_to_arrive}
-                  serviceItem={Inspection}
+                  service_price_object={Light.car_price}
+                  service_price={Light.service_price}
+                  weeksToArrive={Light.weeks_to_arrive}
+                  serviceItem={Light}
                 />
               </div>
             </div>
           ))}
         </div>
-        {/* Sunroofs */}
+        {/* Side_Mirrors */}
         <div className="container mx-auto lg:container px-10 xl:px-20 sm:px-10 ">
           <p className=" mt-20 lg:text-4xl text-3xl font-extrabold leading-9 text-gray-800">
-            Sunroof
+          Side Mirror
           </p>
           <p className="text-lg leading-7 text-gray-600 mt-1 xl:w-7/12 w-full">
             Whether article spirits new her covered hastily sitting her. Money
             witty books nor son add
           </p>
-          {servicedata.Sunroofs.map((Sunroof) => (
+          {servicedata.Side_Mirrors.map((Side_Mirror) => (
             <div className="flex flex-wrap sm:flex-no-wrap  w-full shadow mb-16 mt-5 rounded-lg">
               <div className="w-full sm:w-1/5  bg-white">
                 <Image
-                  src={Sunroof.image}
-                  alt={Sunroof.name}
+                  src={Side_Mirror.image}
+                  alt={Side_Mirror.name}
                   width={200}
                   height={0}
                   className="ml-5 lg:ml-0 mt-0 lg:mt-5"
@@ -218,38 +218,38 @@ function carspacleaning() {
 
               <div className="w-full sm:w-1/5 bg-white ">
                 <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800 lg:mt-0 mt-5 lg:ml-0 ml-5 my-0 lg:my-5 py-0 lg:pt-5">
-                  {Sunroof.name}
+                  {Side_Mirror.name}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Sunroof.description}
+                  {Side_Mirror.description}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Sunroof.description1}
+                  {Side_Mirror.description1}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Sunroof.description2}
+                  {Side_Mirror.description2}
                 </p>
               </div>
               <div className="w-full sm:w-1/5  bg-white mt-0 lg:mt-16 ml-0 lg:ml-16">
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Sunroof.description3}
+                  {Side_Mirror.description3}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Sunroof.description4}
+                  {Side_Mirror.description4}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Sunroof.description5}
+                  {Side_Mirror.description5}
                 </p>
                 <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Sunroof.description6}
+                  {Side_Mirror.description6}
                 </p>
               </div>
               <div className="w-full sm:w-1/5 my-8 lg:ml-0 ml-5 bg-white mt-0 lg:mt-10">
                 <PriceAndButtons
-                  service_price_object={Sunroof.car_price}
-                  service_price={Sunroof.service_price}
-                  weeksToArrive={Sunroof.weeks_to_arrive}
-                  serviceItem={Sunroof}
+                  service_price_object={Side_Mirror.car_price}
+                  service_price={Side_Mirror.service_price}
+                  weeksToArrive={Side_Mirror.weeks_to_arrive}
+                  serviceItem={Side_Mirror}
                 />
               </div>
             </div>
@@ -260,4 +260,4 @@ function carspacleaning() {
   );
 }
 
-export default carspacleaning;
+export default windshield;

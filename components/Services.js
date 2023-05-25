@@ -113,7 +113,7 @@ function Services() {
                 <p className="text-center font-semibold">Tyres Work</p>
               </div>
               <div className="lg:mt-7 sm:mt-0 grid justify-items-center ...">
-                <Link href="/services/windshield">
+                <Link href="/services/windshield&light">
                   <Image
                     src="/services/glass.png"
                     alt="Picture of the author"
@@ -124,7 +124,7 @@ function Services() {
                 <p className="text-center font-semibold">windshield</p>
               </div>
               <div className="lg:mt-7 sm:mt-0 grid justify-items-center ...">
-                <Link href="/services/headlight">
+                <Link href="/services/windshield&light">
                   <Image
                     src="/services/head.png"
                     alt="Picture of the author"
