@@ -29,13 +29,14 @@ const SelectionModal = ({ children, isOpen, handleClose }) => {
       <>
         <div className="fixed flex items-center justify-center top-0 left-0 w-screen h-screen z-999 bg-gray-700 bg-opacity-60">
           <div
-            className=" bg-white flex flex-col box-border h-4/6  max-w-fit  rounded shadow-xl relative sm:w-5/6 lg:min-w-fit w-5/6"
+            className=" bg-white flex flex-col box-border h-4/6  max-w-fit  rounded shadow-xl relative sm:w-5/6 lg:w-1/2 w-5/6"
             // onBlur={()=>setModalOpen(!modalOpen)}
           >
             <div className="w-full px-6  py-2 flex  justify-between">
               { query.carModel ? <Link
                 href={`${asPath}/`}
                 as={`${asPath}`}
+                
                 className=" m-3 px-2 self-end font-bold text-md active:scale-75 "
                 onClick={() => {
                   setSearchInfo("");

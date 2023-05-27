@@ -1,10 +1,17 @@
 import ForShipping from "@/components/ForShipping";
 import Layout from "@/components/Layout";
 import SelectedCar from "@/components/SelectedCar";
+import { Store } from "@/utils/Store";
 import { ValidationError, useForm } from "@formspree/react";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useContext } from "react";
 
 function shipping() {
+  const router = useRouter();
+  const { state: storeState, dispatch, selectedVehicle } = useContext(Store);
+  const {
+    cart: { cartItems },
+  } = storeState;
   const [state, handleSubmit] = useForm("xvonybwp");
   if (state.succeeded) {
     return <ForShipping />;
@@ -143,7 +150,7 @@ function shipping() {
                       Total items
                     </p>
                     <p className="text-lg font-semibold leading-4 text-gray-600">
-                      20
+                      ({cartItems.reduce((a, c) => a + c.quantity, 0)})
                     </p>
                   </div>
                   <div className="flex justify-between w-full items-center">
@@ -151,15 +158,26 @@ function shipping() {
                       Total Charges
                     </p>
                     <p className="text-lg font-semibold leading-4 text-gray-600">
-                      $2790
+                    ₹
+                      {cartItems.reduce(
+                        (a, c) =>
+                          a +
+                          c.quantity *
+                            (c.service_price +
+                              Math.floor(
+                                c.car_price?.[selectedVehicle[0]?.model]
+                              )),
+                        0
+                      )}{}
                     </p>
                   </div>
                   <div className="flex justify-between w-full items-center">
-                    <p className="text-lg leading-4 text-gray-600">
-                      Shipping charges
-                    </p>
+                    <p className="text-lg leading-4 text-gray-600">Discount</p>
                     <p className="text-lg font-semibold leading-4 text-gray-600">
-                      $90
+                      {cartItems.reduce(
+                        (a, c) => a + c.quantity * selectedVehicle[0].discount,
+                        0
+                      )}%
                     </p>
                   </div>
                   <div className="flex justify-between w-full items-center">
@@ -167,7 +185,18 @@ function shipping() {
                       Sub total{" "}
                     </p>
                     <p className="text-lg font-semibold leading-4 text-gray-600">
-                      $3520
+                    ₹
+                      {cartItems.reduce(
+                        (a, c) =>
+                          a +
+                          c.quantity *
+                            (c.service_price +
+                              Math.floor(
+                                c.car_price?.[selectedVehicle[0]?.model]
+                              ) -
+                              selectedVehicle[0].discount),
+                        0
+                      )}{" "}
                     </p>
                   </div>
                 </div>
@@ -176,9 +205,24 @@ function shipping() {
                     Estimated Total{" "}
                   </p>
                   <p className="text-lg font-semibold leading-4 text-gray-800">
-                    $2900
+                  ₹
+                    {cartItems.reduce(
+                      (a, c) =>
+                        a +
+                        c.quantity *
+                          (c.service_price +
+                            Math.floor(
+                              c.car_price?.[selectedVehicle[0]?.model]
+                            ) -
+                            selectedVehicle[0].discount),
+                      0
+                    )}{" "}
                   </p>
+                  
                 </div>
+                <p className="text-md font-normal leading-8 text-gray-800">
+                No hidden charges guaranteed!{" "}
+                  </p>
               </div>
             </div>
           </div>

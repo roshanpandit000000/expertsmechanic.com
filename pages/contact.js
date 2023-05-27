@@ -7,7 +7,7 @@ function contact() {
     <>
       <Layout title="Contact us">
         {/* madsknsjn */}
-        <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4 ">
+        <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4 mt-10">
           <div className="flex flex-col lg:flex-row justify-between gap-8">
             <div className="w-full lg:w-5/12 flex flex-col ">
               <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4">
@@ -81,7 +81,7 @@ function contact() {
                 <div className="md:flex items-center mt-8">
                   <div className="md:w-72 flex flex-col">
                     <label className="text-base font-semibold leading-none text-gray-800">
-                      Company name
+                      Address
                     </label>
                     <input
                       tabIndex={0}
@@ -94,7 +94,7 @@ function contact() {
                   </div>
                   <div className="md:w-72 flex flex-col md:ml-6 md:mt-0 mt-4">
                     <label className="text-base font-semibold leading-none text-gray-800">
-                      Country
+                      Phone No.
                     </label>
                     <input
                       tabIndex={0}

@@ -71,10 +71,10 @@ const PriceAndButtons = ({
           <>
             <span className="flex items-center gap-2 lg:ml-20 sm:ml-0 ml-0">
               <h2 className="text-xl">
-                ${findItems() - selectedVehicle[0].discount}.99
+              ₹{findItems() - selectedVehicle[0].discount}.99
               </h2>
               <strike className="text-ms text-gray-700/70">
-                ${findItems()}.99
+              ₹{findItems()}.99
               </strike>
             </span>
             <section className="h-24 lg:ml-20 sm:ml-0 ml-0">

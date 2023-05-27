@@ -1,9 +1,9 @@
 class carsDefaultPrice {
   "Alturas G4" = 200;
-  800 = 50.99;
+  800 = 2299;
   "A-Star" = 19.99;
   "Alto 800" = 21.99;
-  "Alto K10" = 15.99;
+  "Alto K10" = 2999;
   Alto = 25.99;
   Baleno = 21.99;
   Celeio = 15.99;
@@ -30,7 +30,7 @@ class carsDefaultPrice {
   XL6 = 14.99;
   Zen = 16.0;
   "Accent Viva" = 15.5;
-  Accent = 29.99;
+  Accent = 2999;
   Alcazar = 31.99;
   Aura = 25.5;
   Creta = 24.99;
@@ -430,7 +430,7 @@ const servicedata = {
       month: "Every 5,000 Kms / 3 Months",
       image: "/servicesimage/periodic/basic.jpg",
       countInStock: 20,
-      service_price: 64.0,
+      service_price: 2,
       weeks_to_arrive: 7,
       car_price: new carsDefaultPrice(),
     },
@@ -454,7 +454,7 @@ const servicedata = {
 
       image: "/servicesimage/periodic/advanced.jpg",
       countInStock: 20,
-      service_price: 64.0,
+      service_price: 400,
       weeks_to_arrive: 7,
       car_price: new carsDefaultPrice(),
     },
@@ -483,7 +483,7 @@ const servicedata = {
       description20: "Brake Fluid Top Up",
       image: "/servicesimage/periodic/primeium.jpg",
       countInStock: 20,
-      service_price: 64.0,
+      service_price: 1000,
       weeks_to_arrive: 7,
       car_price: new carsDefaultPrice(),
     },

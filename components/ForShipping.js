@@ -26,12 +26,10 @@ function ForShipping() {
             />
             <div className="bg-gray-800 bg-opacity-80 md:my-16 lg:py-16 py-10 w-full md:mx-24 md:px-12 px-4 flex flex-col items-center justify-center relative z-40">
               <h1 className="text-4xl font-semibold leading-9 text-white text-center">
-                Don’t miss out!
+              Thank you for choosing our car services!
               </h1>
               <p className="text-base leading-normal text-center text-white mt-6">
-                Subscribe to your newsletter to stay in the loop. Our newsletter
-                is sent once in <br />a week on every friday so subscribe to get
-                latest news and updates.
+              We appreciate your trust in our team and would like to inform you that we will be in touch with you shortly. Our dedicated staff is committed to providing prompt and reliable service, and we aim to respond to all inquiries within 10 hours.
               </p>
               <div className="  flex-col sm:flex-row  flex items-center mt-10">
                 <button 

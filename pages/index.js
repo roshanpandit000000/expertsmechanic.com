@@ -1,4 +1,3 @@
-import SelectBox from "../components/SelectBox";
 import HomePageSlider from "../components/HomePageSlider";
 import Layout from "../components/Layout";
 

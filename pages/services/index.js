@@ -8,287 +8,90 @@ function index() {
     <>
       <Layout title="Services">
         {/* tital */}
-
-        <div className="mt-24 sm:pt-24 pb-10 sm:pb-10 lg:py-10 flex-col items-center justify-center  px-4">
-          <h1
-            role="heading"
-            className="text-center xl:text-5xl md:text-4xl text-2xl font-bold text-gray-800"
-          >
-            Our All Services
-          </h1>
-          <p
-            role="contentinfo"
-            className="text-base leading-normal text-center text-gray-600 mt-2"
-          >
-            Whether article spirits new her covered hastily sitting her. Money
-            witty books nor son
-          </p>
-        </div>
-
-        <div className="w-full flex items-center justify-center container mx-auto">
-          <div className="py-4 sm:py-6 md:py-8 bg-white shadow rounded-lg mx-5">
-            <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 px-6 xl:px-1 gap-y-8 gap-x-12 2xl:gap-x-6">
-              <div className=" grid justify-items-center ... ">
-                <Image
-                  src="/services/periodic-service.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center font-semibold">Periodic Service</p>
-              </div>
-              <div className=" grid justify-items-center ...">
-                <Link href="/services/dentingpainting">
-                  <Image
-                    src="/services/ac repair.png"
-                    alt="Picture of the author"
-                    width={80}
-                    height={0}
-                  />
-                </Link>
-
-                <p className="text-center font-semibold">AC Repair</p>
-              </div>
-              <div className=" grid justify-items-center ...">
-                <Link href="/services/headlight">
-                  <Image
-                    src="/services/batteris.png"
-                    alt="Picture of the author"
-                    width={75}
-                    height={0}
-                  />
-                </Link>
-
-                <p className="text-center font-semibold">Batterys</p>
-              </div>
-              <div className=" grid justify-items-center ...">
-                <Link href="/services/periodicservices">
-                  <Image
-                    src="/services/car-clean.png"
-                    alt="Picture of the author"
-                    width={80}
-                    height={0}
-                  />
-                </Link>
-
-                <p className="text-center font-semibold">Car Spa & Cleaning</p>
-              </div>
-              <div className=" grid justify-items-center ...">
-                <Link href="/services/suspension">
-                  <Image
-                    src="/services/car-exterius.png"
-                    alt="Picture of the author"
-                    width={80}
-                    height={0}
-                  />
-                </Link>
-
-                <p className="text-center font-semibold">
-                  Clutch & Body Parts{" "}
+        <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4 mt-10">
+          <div className="flex flex-col lg:flex-row justify-center gap-8">
+            <div className="w-full lg:w-8/12 ">
+              <div className="  bg-white shadow-lg rounded-lg py-12 lg:px-28 px-8   ">
+                <p className="md:text-3xl text-xl font-bold leading-7 text-center text-gray-700">
+                  Let’s chat and get a quote!
                 </p>
-              </div>
-              <div className="grid justify-items-center ...">
-                <Image
-                  src="/services/full-body.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center font-semibold">Full Body Paint</p>
-              </div>
-
-              {/* second section */}
-              <div className="lg:mt-7 sm:mt-0 grid justify-items-center ...">
-                <Image
-                  src="/services/car-interior-service.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center font-semibold">Detailed Service</p>
-              </div>
-              <div className="lg:mt-7 sm:mt-0 grid justify-items-center ...">
-                <Image
-                  src="/services/tyre.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center font-semibold">Tyres Work</p>
-              </div>
-              <div className="lg:mt-7 sm:mt-0 grid justify-items-center ...">
-                <Image
-                  src="/services/glass.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center font-semibold">windshield</p>
-              </div>
-              <div className="lg:mt-7 sm:mt-0 grid justify-items-center ...">
-                <Image
-                  src="/services/head.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center font-semibold">Headlights</p>
-              </div>
-              <div className="lg:mt-7 sm:mt-0 grid justify-items-center ...">
-                <Image
-                  src="/services/parts.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center font-semibold">
-                  Suspention & Fitments
+                <div className="md:flex items-center mt-12">
+                  <div className="md:w-72 flex flex-col">
+                    <label className="text-base font-semibold leading-none text-gray-800">
+                      Name
+                    </label>
+                    <input
+                      tabIndex={0}
+                      arial-label="Please input name"
+                      type="name"
+                      className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
+                      placeholder="Please input  name"
+                    />
+                  </div>
+                  <div className="md:w-72 flex flex-col md:ml-6 md:mt-0 mt-4">
+                    <label className="text-base font-semibold leading-none text-gray-800">
+                      Email Address
+                    </label>
+                    <input
+                      tabIndex={0}
+                      arial-label="Please input email address"
+                      type="name"
+                      className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
+                      placeholder="Please input email address"
+                    />
+                  </div>
+                </div>
+                <div className="md:flex items-center mt-8">
+                  <div className="md:w-72 flex flex-col">
+                    <label className="text-base font-semibold leading-none text-gray-800">
+                      Address
+                    </label>
+                    <input
+                      tabIndex={0}
+                      role="input"
+                      arial-label="Please input company name"
+                      type="name"
+                      className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100 "
+                      placeholder="Please input company name"
+                    />
+                  </div>
+                  <div className="md:w-72 flex flex-col md:ml-6 md:mt-0 mt-4">
+                    <label className="text-base font-semibold leading-none text-gray-800">
+                     Phone No.
+                    </label>
+                    <input
+                      tabIndex={0}
+                      arial-label="Please input country name"
+                      type="name"
+                      className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
+                      placeholder="Please input country name"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div className="w-full flex flex-col mt-8">
+                    <label className="text-base font-semibold leading-none text-gray-800">
+                      Message
+                    </label>
+                    <textarea
+                      tabIndex={0}
+                      aria-label="leave a message"
+                      role="textbox"
+                      type="name"
+                      className="h-36 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100 resize-none"
+                      defaultValue={""}
+                    />
+                  </div>
+                </div>
+                <p className="text-xs leading-3 text-gray-600 mt-4">
+                  By clicking submit you agree to our terms of service, privacy
+                  policy and how we use data as stated
                 </p>
-              </div>
-              <div className="lg:mt-7 sm:mt-0 grid justify-items-center ...">
-                <Image
-                  src="/services/penting.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center font-semibold">Denting/Penting</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* tital */}
-
-        <div className="pt-24 sm:pt-24 pb-8 sm:pb-8 lg:pt-14   flex-col items-center justify-center  px-4">
-          <h1
-            role="heading"
-            className="text-center xl:text-5xl md:text-4xl text-2xl font-bold text-gray-800"
-          >
-            Our Custom Services
-          </h1>
-          <p
-            role="contentinfo"
-            className="text-base leading-normal text-center text-gray-600 mt-2"
-          >
-            Whether article spirits new her covered hastily sitting her. Money
-            witty books nor son
-          </p>
-        </div>
-
-        {/* costum  */}
-        <div className="w-full flex items-center justify-center container mx-auto">
-          <div className="py-4 sm:py-6 md:py-8 bg-white shadow rounded-lg mx-5">
-            <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 px-6 xl:px-10 gap-y-8 gap-x-12 2xl:gap-x-16">
-              <div className=" ">
-                <Image
-                  src="/customservices/battry.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center">Periodic</p>
-              </div>
-              <div className=" ">
-                <Image
-                  src="/customservices/body part.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center">Periodic</p>
-              </div>
-              <div className=" ">
-                <Image
-                  src="/customservices/breke.png"
-                  alt="Picture of the author"
-                  width={75}
-                  height={0}
-                />
-                <p className="text-center">Periodic</p>
-              </div>
-              <div className=" ">
-                <Image
-                  src="/customservices/cleaning.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center">Periodic</p>
-              </div>
-              <div className=" ">
-                <Image
-                  src="/customservices/clutch.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center">Periodic </p>
-              </div>
-              <div className="">
-                <Image
-                  src="/customservices/headlight.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center">Periodic Services</p>
-              </div>
-
-              {/* second section */}
-              <div className="lg:mt-7 sm:mt-0 ">
-                <Image
-                  src="/customservices/side mirror.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center">Periodic</p>
-              </div>
-              <div className="lg:mt-7 sm:mt-0 ">
-                <Image
-                  src="/customservices/spa.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center">Periodic</p>
-              </div>
-              <div className="lg:mt-7 sm:mt-0 ">
-                <Image
-                  src="/customservices/steering.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center">Periodic</p>
-              </div>
-              <div className="lg:mt-7 sm:mt-0 ">
-                <Image
-                  src="/customservices/suspension.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center">Periodic</p>
-              </div>
-              <div className="lg:mt-7 sm:mt-0 ">
-                <Image
-                  src="/customservices/tyre.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center">Periodic</p>
-              </div>
-              <div className="lg:mt-7 sm:mt-0 ">
-                <Image
-                  src="/customservices/windshild.png"
-                  alt="Picture of the author"
-                  width={80}
-                  height={0}
-                />
-                <p className="text-center">Periodic</p>
+                <div className="flex items-center justify-center w-full ">
+                  <button className="mt-9 text-base font-semibold leading-none text-white py-4 px-10 bg-indigo-700 rounded hover:bg-indigo-600 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none">
+                    SUBMIT
+                  </button>
+                </div>
               </div>
             </div>
           </div>
