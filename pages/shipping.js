@@ -5,6 +5,7 @@ import { Store } from "@/utils/Store";
 import { ValidationError, useForm } from "@formspree/react";
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
+import { ColorRing } from "react-loader-spinner";
 
 function shipping() {
   const router = useRouter();
@@ -13,9 +14,12 @@ function shipping() {
     cart: { cartItems },
   } = storeState;
   const [state, handleSubmit] = useForm("xvonybwp");
+
   if (state.succeeded) {
     return <ForShipping />;
   }
+  console.log(state);
+
   return (
     <>
       <Layout title="Get Services">
@@ -47,6 +51,44 @@ function shipping() {
                 >
                   <div className="mt-8 flex flex-col justify-start items-start w-full space-y-8 ">
                     <SelectedCar id="selectedcar" name="selectedcar" />
+                    <input
+                      name="vehicle"
+                      type="hidden"
+                      value={`Model: ${selectedVehicle[0]?.model}, Make: ${selectedVehicle[0]?.make}, Year: ${selectedVehicle[0]?.year}, Class: ${selectedVehicle[0]?.class}`}
+                    />
+                    <input
+                      name="_discount"
+                      type="hidden"
+                      value={cartItems.reduce(
+                        (a, c) => a + c.quantity * selectedVehicle[0]?.discount,
+                        0
+                      )}
+                    />
+                    <input
+                      name="_price"
+                      type="hidden"
+                      value={cartItems.reduce(
+                        (a, c) =>
+                          a +
+                          c.quantity *
+                            (c.service_price +
+                              Math.floor(
+                                c.car_price?.[selectedVehicle[0]?.model]
+                              )),
+                        0
+                      )}
+                    />
+                    {cartItems.map((items, index) => {
+                      return (
+                        <>
+                          <input
+                            name={`Item(${index + 1}): ${items.name}`}
+                            type="hidden"
+                            value={`Quantity: ${items.quantity}, service-Price: ${items.service_price}, Description: ${items.description}`}
+                          />
+                        </>
+                      );
+                    })}
 
                     <input
                       className="px-2 focus:outline-none focus:ring-2 focus:ring-gray-500 border-b border-gray-200 leading-4 text-base placeholder-gray-600 py-4 w-full"
@@ -120,13 +162,37 @@ function shipping() {
                       field="city"
                       errors={state.errors}
                     />
-                    <button
-                      type="submit"
-                      disabled={state.submitting}
-                      className="focus:outline-none focus:ring-gray-500 focus:ring-offset-2 mt-8 text-base font-medium focus:ring-2 focus:ring-ocus:ring-gray-800 leading-4 hover:bg-black py-4 w-full md:w-4/12 lg:w-full text-white bg-gray-800"
-                    >
-                      Proceed to payment
-                    </button>
+                    {state.submitting ? (
+                      <button
+                        type="submit"
+                        disabled={state.submitting}
+                        className=" flex justify-center items-center focus:outline-none focus:ring-gray-500 focus:ring-offset-2 mt-8 text-base font-medium focus:ring-2 focus:ring-ocus:ring-gray-800 leading-4 hover:bg-gray-500 py-4 w-full md:w-4/12 lg:w-full text-white bg-gray-500 "
+                      >
+                        <ColorRing
+                          visible={true}
+                          height="40"
+                          width="40"
+                          ariaLabel="blocks-loading"
+                          wrapperStyle={{}}
+                          wrapperClass="blocks-wrapper"
+                          colors={[
+                            "#ffffff",
+                            "#ffffff",
+                            "#ffffff",
+                            "#ffffff",
+                            "#ffffff",
+                          ]}
+                        />{" "}
+                      </button>
+                    ) : (
+                      <button
+                        type="submit"
+                        disabled={state.submitting}
+                        className="focus:outline-none focus:ring-gray-500 focus:ring-offset-2 mt-8 text-base font-medium focus:ring-2 focus:ring-ocus:ring-gray-800 leading-4 hover:bg-black py-4 w-full md:w-4/12 lg:w-full text-white bg-gray-800"
+                      >
+                        Proceed to payment
+                      </button>
+                    )}
                   </div>
                 </form>
                 <div className="mt-4 flex justify-start items-center w-full">
@@ -158,7 +224,7 @@ function shipping() {
                       Total Charges
                     </p>
                     <p className="text-lg font-semibold leading-4 text-gray-600">
-                    ₹
+                      ₹
                       {cartItems.reduce(
                         (a, c) =>
                           a +
@@ -168,7 +234,8 @@ function shipping() {
                                 c.car_price?.[selectedVehicle[0]?.model]
                               )),
                         0
-                      )}{}
+                      )}
+                      {}
                     </p>
                   </div>
                   <div className="flex justify-between w-full items-center">
@@ -177,7 +244,8 @@ function shipping() {
                       {cartItems.reduce(
                         (a, c) => a + c.quantity * selectedVehicle[0].discount,
                         0
-                      )}%
+                      )}
+                      %
                     </p>
                   </div>
                   <div className="flex justify-between w-full items-center">
@@ -185,7 +253,7 @@ function shipping() {
                       Sub total{" "}
                     </p>
                     <p className="text-lg font-semibold leading-4 text-gray-600">
-                    ₹
+                      ₹
                       {cartItems.reduce(
                         (a, c) =>
                           a +
@@ -205,7 +273,7 @@ function shipping() {
                     Estimated Total{" "}
                   </p>
                   <p className="text-lg font-semibold leading-4 text-gray-800">
-                  ₹
+                    ₹
                     {cartItems.reduce(
                       (a, c) =>
                         a +
@@ -218,11 +286,10 @@ function shipping() {
                       0
                     )}{" "}
                   </p>
-                  
                 </div>
                 <p className="text-md font-normal leading-8 text-gray-800">
-                No hidden charges guaranteed!{" "}
-                  </p>
+                  No hidden charges guaranteed!{" "}
+                </p>
               </div>
             </div>
           </div>
