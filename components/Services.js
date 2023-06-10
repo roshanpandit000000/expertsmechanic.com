@@ -74,7 +74,7 @@ function Services() {
                 </Link>
 
                 <p className="text-center font-semibold">
-                  Body Parts{" "}
+                  Clutch & Body Parts{" "}
                 </p>
               </div>
               <div className="grid justify-items-center ...">

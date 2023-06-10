@@ -135,66 +135,7 @@ function dentingpainting() {
             </div>
           ))}
         </div>
-        {/* Whole_Bodys */}
-        <div className="container mx-auto lg:container px-10 xl:px-20 sm:px-10 ">
-          <p className=" mt-20 lg:text-4xl text-3xl font-extrabold leading-9 text-gray-800">
-          Whole Bodys
-          </p>
-          <p className="text-lg leading-7 text-gray-600 mt-1 xl:w-7/12 w-full">
-            Whether article spirits new her covered hastily sitting her. Money
-            witty books nor son add
-          </p>
-          {servicedata.Whole_Bodys.map((Whole_Body) => (
-            <div className="flex flex-wrap sm:flex-no-wrap  w-full shadow mb-16 mt-5 rounded-lg">
-              <div className="w-full sm:w-1/5  bg-white">
-                <Image
-                  src={Whole_Body.image}
-                  alt={Whole_Body.name}
-                  width={200}
-                  height={0}
-                  className="ml-5 lg:ml-0 mt-0 lg:mt-5"
-                />
-              </div>
-
-              <div className="w-full sm:w-1/5 bg-white ">
-                <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800 lg:mt-0 mt-5 lg:ml-0 ml-5 my-0 lg:my-5 py-0 lg:pt-5">
-                  {Whole_Body.name}
-                </p>
-                <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Whole_Body.description}
-                </p>
-                <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Whole_Body.description1}
-                </p>
-                <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Whole_Body.description2}
-                </p>
-              </div>
-              <div className="w-full sm:w-1/5  bg-white mt-0 lg:mt-16 ml-0 lg:ml-16">
-                <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Whole_Body.description3}
-                </p>
-                <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Whole_Body.description4}
-                </p>
-                <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Whole_Body.description5}
-                </p>
-                <p className=" font-medium text-base leading-6 text-gray-600 lg:mt-0 mt-5 lg:ml-0 ml-5">
-                  {Whole_Body.description6}
-                </p>
-              </div>
-              <div className="w-full sm:w-1/5 my-8 lg:ml-0 ml-5 bg-white mt-0 lg:mt-10">
-                <PriceAndButtons
-                  service_price_object={Whole_Body.car_price}
-                  service_price={Whole_Body.service_price}
-                  weeksToArrive={Whole_Body.weeks_to_arrive}
-                  serviceItem={Whole_Body}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+       
         {/* Left_Sides */}
         <div className="container mx-auto lg:container px-10 xl:px-20 sm:px-10 ">
           <p className=" mt-20 lg:text-4xl text-3xl font-extrabold leading-9 text-gray-800">
